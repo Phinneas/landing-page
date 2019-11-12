@@ -8,5 +8,8 @@ script:
   - gatsby build
 
 deploy:
-  provider: netlify
-  edge: true
+  provider: script
+  script: bash scripts/publish.sh
+  skip_cleanup: true
+  on:
+    branch: master
