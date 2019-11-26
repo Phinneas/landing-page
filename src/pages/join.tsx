@@ -14,56 +14,27 @@ import {
   Tab,
   TabPanels,
   TabPanel,
-  Flex,
-  FlexProps
+  Flex
 } from "@chakra-ui/core";
 import DorgSocial from "../components/shell/DorgSocial";
 import DorgMenu from "../components/shell/DorgMenu";
 import styled from "@emotion/styled";
 
-const IndexPage: React.FC = ({}) => {
-  const LandingSection: React.FC<FlexProps> = ({ children }) => {
-    return (
-      <Flex minHeight="100vh" align="center" justify="space-around">
-        <Box maxW={960} px={4} flexGrow={1}>
-          {children}
-        </Box>
-      </Flex>
-    );
-  };
-
+const OrgPage: React.FC = ({}) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Join dOrg" />
 
       <Flex minHeight="70vh" align="center" justifyContent={"space-around"}>
         <Box maxW={960} px={4}>
           <Heading as="h2">
-            A Web3 co-op that designs, develops & maintains projects of all
-            sizes.
+            We are always looking to connect with like minded humans.
           </Heading>
           <Button mt={6}>Get in touch</Button>
         </Box>
       </Flex>
-
-      <LandingSection id="cases">
-        <Cases />
-      </LandingSection>
-
-      <LandingSection>
-        <Services />
-      </LandingSection>
-
-      <LandingSection>
-        <Manifesto />
-      </LandingSection>
-
-      <LandingSection>
-        <DorgMenu />
-        <DorgSocial />
-      </LandingSection>
     </Layout>
   );
 };
 
-export default IndexPage;
+export default OrgPage;

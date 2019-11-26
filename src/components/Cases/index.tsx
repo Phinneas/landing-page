@@ -1,20 +1,20 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import {
-  Grid,
-  Divider,
-  Typography,
-  Theme,
-  createStyles,
-  withStyles,
-  WithStyles
-} from "@material-ui/core";
 import CaseCard from "./CaseCard";
+import {
+  Heading,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  Image,
+  Flex
+} from "@chakra-ui/core";
 
 // eslint-disable-next-line
-interface Props extends WithStyles<typeof styles> {}
 
-const CaseList: React.FC<Props> = ({ classes }) => {
+const CaseList: React.FC = ({}) => {
   const data = useStaticQuery(graphql`
     query CasesQuery {
       allMarkdownRemark(
@@ -41,57 +41,33 @@ const CaseList: React.FC<Props> = ({ classes }) => {
   `);
 
   return (
-    <Grid item className={classes.cases}>
-      <Divider className={classes.casesDivider} />
-      <Typography align={"center"} variant={"h3"} className={classes.header}>
+    <>
+      <Heading as="h3" size="lg" textAlign="center" mb={4}>
         Cases
-      </Typography>
-      <Divider />
-      <Grid
-        container
-        direction={"row"}
-        justify={"space-evenly"}
-        alignItems={"flex-start"}
-      >
-        {data.allMarkdownRemark.edges.map(
-          ({ node: { id, frontmatter } }: any) => (
-            <Grid key={id} item xs={3} className={classes.caseCard}>
-              <CaseCard {...frontmatter} />
-            </Grid>
-          )
-        )}
-      </Grid>
-    </Grid>
+      </Heading>
+      <Tabs>
+        <TabList justifyContent="space-around">
+          {data.allMarkdownRemark.edges.map(
+            ({ node: { id, frontmatter } }: any) => (
+              <Tab>
+                <Image src={frontmatter.icon.publicURL} maxHeight={20} />
+              </Tab>
+            )
+          )}
+        </TabList>
+
+        <TabPanels>
+          {data.allMarkdownRemark.edges.map(
+            ({ node: { id, frontmatter } }: any) => (
+              <TabPanel>
+                <CaseCard {...frontmatter} />
+              </TabPanel>
+            )
+          )}
+        </TabPanels>
+      </Tabs>
+    </>
   );
 };
 
-// STYLE
-const styles = (theme: Theme) =>
-  createStyles({
-    header: {
-      color: "#4bd2c6"
-    },
-    subHeader: {
-      marginBottom: "20px",
-      color: "white"
-    },
-    centerText: {
-      marginTop: "40px",
-      maxWidth: "680px"
-    },
-    cases: {
-      margin: "20px",
-      paddingTop: "20px",
-      maxWidth: "840px"
-    },
-    casesDivider: {
-      marginBottom: "50px"
-    },
-    caseCard: {
-      minWidth: "380px",
-      maxWidth: "420px",
-      margin: "20px"
-    }
-  });
-
-export default withStyles(styles)(CaseList);
+export default CaseList;
