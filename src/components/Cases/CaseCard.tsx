@@ -10,6 +10,7 @@ interface Props {
     publicURL: string;
   };
   title: string;
+  bgcolor: string;
   description: string;
   excerpt: string;
   github?: string;
@@ -21,6 +22,7 @@ interface Props {
 const CaseCard: React.FC<Props> = ({
   icon,
   title,
+  bgcolor,
   description,
   excerpt,
   github,
@@ -29,10 +31,14 @@ const CaseCard: React.FC<Props> = ({
   article
 }) => (
   <>
-    <Flex height={300} align={"center"} justifyContent={"space-around"}>
+    <Flex
+      height={300}
+      align={"center"}
+      justifyContent={"space-around"}
+      background={bgcolor}
+    >
       <Image height={200} src={icon.publicURL} />
     </Flex>
-    <Heading as="h3">{title}</Heading>
     <p>{description}</p>
     <p>{excerpt}</p>
     <p>Git: {github}</p>

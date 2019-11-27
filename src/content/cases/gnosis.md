@@ -1,6 +1,7 @@
 ---
 order: 1
 title: Gnosis
+bgcolor: #1AA7C3
 icon: ../../images/icons/gnosis.svg
 description: DAO Fundraising Module.
 excerpt: Continuous Organization implementation that utilizes automated market makers and scalable dividend distribution to reimagine accountable capital formation

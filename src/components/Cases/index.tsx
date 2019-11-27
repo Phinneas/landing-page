@@ -29,6 +29,10 @@ const CaseList: React.FC = ({}) => {
               github
               description
               test
+              excerpt
+              spec
+              article
+              bgcolor
               icon {
                 publicURL
               }
@@ -46,11 +50,19 @@ const CaseList: React.FC = ({}) => {
         Cases
       </Heading>
       <Tabs>
-        <TabList justifyContent="space-around">
+        <TabList
+          justifyContent="space-around"
+          flexDirection="row"
+          flexWrap="wrap"
+        >
           {data.allMarkdownRemark.edges.map(
             ({ node: { id, frontmatter } }: any) => (
-              <Tab>
-                <Image src={frontmatter.icon.publicURL} maxHeight={20} />
+              <Tab background={frontmatter.bgcolor}>
+                <Image
+                  src={frontmatter.icon.publicURL}
+                  maxHeight={20}
+                  maxWidth={20}
+                />
               </Tab>
             )
           )}

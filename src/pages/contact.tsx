@@ -32,9 +32,6 @@ const OrgPage: React.FC = ({}) => {
             We work with clients of all shapes and sizes.
           </Heading>
           <Button mt={6}>Join our Discord</Button>
-          <Button mt={6} color="clear">
-            Join our Discord
-          </Button>
           <Button mt={6}>Tell us about your project</Button>
         </Box>
       </Flex>
