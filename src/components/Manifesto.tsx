@@ -5,15 +5,14 @@ import {
   Tabs,
   TabList,
   Button,
-  Tab,
-  TabPanels,
-  TabPanel,
   Accordion,
   AccordionItem,
   AccordionHeader,
   AccordionIcon,
   AccordionPanel,
-  Text
+  Text,
+  Flex,
+  Box
 } from "@chakra-ui/core";
 
 // eslint-disable-next-line
@@ -40,28 +39,37 @@ export const Manifesto: React.FC = ({}) => {
   `);
 
   return (
-    <>
-      <Heading as="h3" fontSize="sm" mb={4}>
-        Our Principles
-      </Heading>
-      <Accordion>
-        {data.allMarkdownRemark.edges.map(
-          ({ node: { id, frontmatter } }: any) => (
-            <AccordionItem>
-              <AccordionHeader px={0}>
-                <Heading as="h3" textAlign="left">
-                  {frontmatter.title}
-                </Heading>
-              </AccordionHeader>
-              <AccordionPanel pb={0} px={0}>
-                <Text fontSize="lg" mb="1rem">
-                  {frontmatter.description}
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-          )
-        )}
-      </Accordion>
-    </>
+    <Flex
+      pt={"25vh"}
+      pb={"15vh"}
+      minHeight="60vh"
+      align="center"
+      justify="space-around"
+    >
+      <Box maxW={960} flexGrow={1}>
+        >
+        <Heading as="h3" fontSize="sm" mb={4}>
+          Our Principles
+        </Heading>
+        <Accordion>
+          {data.allMarkdownRemark.edges.map(
+            ({ node: { id, frontmatter } }: any) => (
+              <AccordionItem>
+                <AccordionHeader px={0}>
+                  <Heading as="h3" textAlign="left">
+                    {frontmatter.title}
+                  </Heading>
+                </AccordionHeader>
+                <AccordionPanel pb={0} px={0}>
+                  <Text fontSize="lg" mb="1rem">
+                    {frontmatter.description}
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
+            )
+          )}
+        </Accordion>
+      </Box>
+    </Flex>
   );
 };
