@@ -39,7 +39,9 @@ const CaseList: React.FC = ({}) => {
               spec
               article
               bgcolor
-              icon
+              icon {
+                publicURL
+              }
             }
             html
           }
