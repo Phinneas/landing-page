@@ -25,19 +25,19 @@ const DorgMenu: React.FC = ({}) => {
   return (
     <Stack spacing={3}>
       <Heading as="h1">
-        <Link to="contact">Get in touch</Link>
+        <Link to="#contact">Get in touch</Link>
       </Heading>
       <Heading as="h1" onClick={e => navigate("#services")}>
-        Our services
+        <Link to="#services">Services</Link>
       </Heading>
       <Heading as="h1">
         <Link to="#cases">Cases</Link>
       </Heading>
       <Heading as="h1">
-        <Link to="org">Meet dOrg</Link>
+        <Link to="#agents">Meet dOrg</Link>
       </Heading>
       <Heading as="h1">
-        <Link to="join">Join us</Link>
+        <Link to="#join">Join us</Link>
       </Heading>
     </Stack>
   );

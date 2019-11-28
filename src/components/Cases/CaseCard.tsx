@@ -1,8 +1,6 @@
 import * as React from "react";
-import TestIcon from "@material-ui/icons/ExitToApp";
 import GitHubIcon from "../common/icons/GitHub";
-import { Image, Heading, Flex } from "@chakra-ui/core";
-import { Box } from "@material-ui/core";
+import { Image, Heading, Flex, Text, Box } from "@chakra-ui/core";
 
 // eslint-disable-next-line
 interface Props {
@@ -30,24 +28,21 @@ const CaseCard: React.FC<Props> = ({
   spec,
   article
 }) => (
-  <>
-    <Flex
-      height={300}
-      align={"center"}
-      justifyContent={"space-around"}
-      background={bgcolor}
-    >
-      <Image height={200} src={icon.publicURL} />
+  <Box mb={"4vh"}>
+    <Flex height={"24vh"} align={"center"} justifyContent={"space-around"}>
+      <Image height={"100%"} maxHeight={"30vh"} src={icon.publicURL} />
     </Flex>
-    <p>{description}</p>
-    <p>{excerpt}</p>
-    <p>Git: {github}</p>
-    <p>Test: {test}</p>
-    <p>Spec: {spec}</p>
-    <p>Article: {article}</p>
-
-    <GitHubIcon />
-  </>
+    <Text textAlign="center" fontSize="lg">
+      {description}
+    </Text>
+    <Text textAlign="center" fontSize="lg" mt={".5rem"} fontWeight={300}>
+      {excerpt}
+    </Text>
+    <Text textAlign="center" fontSize="lg" mt={".5rem"}>
+      {" "}
+      <GitHubIcon />
+    </Text>
+  </Box>
 );
 
 export default CaseCard;

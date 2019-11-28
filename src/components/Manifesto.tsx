@@ -41,8 +41,8 @@ export const Manifesto: React.FC = ({}) => {
 
   return (
     <>
-      <Heading as="h3" size="lg" mb={4}>
-        Our Princibles
+      <Heading as="h3" fontSize="sm" mb={4}>
+        Our Principles
       </Heading>
       <Accordion>
         {data.allMarkdownRemark.edges.map(
@@ -54,8 +54,9 @@ export const Manifesto: React.FC = ({}) => {
                 </Heading>
               </AccordionHeader>
               <AccordionPanel pb={0} px={0}>
-                <Text>{frontmatter.description}</Text>
-                <Button my={4}>Get in touch</Button>
+                <Text fontSize="lg" mb="1rem">
+                  {frontmatter.description}
+                </Text>
               </AccordionPanel>
             </AccordionItem>
           )

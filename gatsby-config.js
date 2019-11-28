@@ -23,18 +23,20 @@ module.exports = {
         path: `${__dirname}/src/content/cases`
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `manifesto`,
-        path: `${__dirname}/src/content/manifesto`
-      }
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `services`,
         path: `${__dirname}/src/content/services`
+      }
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `manifesto`,
+        path: `${__dirname}/src/content/manifesto`
       }
     },
     {

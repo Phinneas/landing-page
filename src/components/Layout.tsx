@@ -7,13 +7,14 @@ import {
   Flex,
   Box,
   DefaultTheme,
-  ThemeProvider
+  ThemeProvider,
+  theme
 } from "@chakra-ui/core";
-// import theme from '../styles'
+import { stripe } from "../styles";
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={{ ...theme, ...stripe }}>
       <CSSReset />
       <TopBar />
       <main>{children}</main>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import CaseCard from "./CaseCard";
 import {
@@ -9,10 +9,16 @@ import {
   TabPanels,
   TabPanel,
   Image,
-  Flex
+  Flex,
+  Box
 } from "@chakra-ui/core";
 
 // eslint-disable-next-line
+
+export interface CaseState {
+  sectionBg: string;
+  tabIndex: number;
+}
 
 const CaseList: React.FC = ({}) => {
   const data = useStaticQuery(graphql`
@@ -44,41 +50,80 @@ const CaseList: React.FC = ({}) => {
     }
   `);
 
+  const [casesState, setCasesState] = useState<CaseState>({
+    sectionBg: data.allMarkdownRemark.edges[0].node.frontmatter.bgcolor.slice(
+      1
+    ),
+    tabIndex: 0
+  });
+
+  function tabIndexChanged(i: number) {
+    setCasesState({
+      sectionBg: data.allMarkdownRemark.edges[i].node.frontmatter.bgcolor.slice(
+        1
+      ),
+      tabIndex: i
+    });
+  }
+  function nextTab(i: number) {
+    tabIndexChanged(
+      (casesState.tabIndex + 1) % data.allMarkdownRemark.edges.length
+    );
+  }
+  const handleTabsChange = index => {
+    tabIndexChanged(index);
+  };
+
   return (
-    <>
-      <Heading as="h3" size="lg" textAlign="center" mb={4}>
+    <Flex
+      direction="column"
+      backgroundColor={casesState.sectionBg}
+      align="center"
+      height="100vh"
+      justify="center"
+      id="cases"
+      color="white"
+    >
+      <Heading as="h3" size="sm" textAlign="center">
         Cases
       </Heading>
-      <Tabs>
+
+      <Tabs index={casesState.tabIndex} onChange={handleTabsChange}>
+        <Flex justifyContent={"space-around"}>
+          <TabPanels>
+            {data.allMarkdownRemark.edges.map(
+              ({ node: { id, frontmatter } }: any) => (
+                <TabPanel maxWidth={"30em"}>
+                  <CaseCard {...frontmatter} />
+                </TabPanel>
+              )
+            )}
+          </TabPanels>
+        </Flex>
+
         <TabList
-          justifyContent="space-around"
+          justifyContent="space-evenly"
           flexDirection="row"
           flexWrap="wrap"
+          alignSelf="flex-end"
+          border={0}
         >
           {data.allMarkdownRemark.edges.map(
-            ({ node: { id, frontmatter } }: any) => (
-              <Tab background={frontmatter.bgcolor}>
-                <Image
-                  src={frontmatter.icon.publicURL}
-                  maxHeight={20}
-                  maxWidth={20}
-                />
-              </Tab>
-            )
+            ({ node: { id, frontmatter } }: any) => {
+              return (
+                <Tab background={frontmatter.bgcolor} border={0}>
+                  <Image
+                    src={frontmatter.icon.publicURL}
+                    maxHeight={"9vh"}
+                    maxWidth={"9vh"}
+                  />
+                </Tab>
+              );
+            }
           )}
         </TabList>
-
-        <TabPanels>
-          {data.allMarkdownRemark.edges.map(
-            ({ node: { id, frontmatter } }: any) => (
-              <TabPanel>
-                <CaseCard {...frontmatter} />
-              </TabPanel>
-            )
-          )}
-        </TabPanels>
       </Tabs>
-    </>
+    </Flex>
   );
 };
 

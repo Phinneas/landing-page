@@ -23,11 +23,11 @@ import DiscordIcon from "../common/icons/Discord";
 import dOrgIcon from "../../images/icons/dOrg.svg";
 
 const DorgSocial: React.FC = ({ children }) => (
-  <Flex justify="flex-end" direction="row">
-    <Button>
-      <GitHubIcon />
+  <Flex justify="flex-end" direction="row" ml={4}>
+    <Button width={0} bg="gray.200">
+      <GitHubIcon colorPrimary="white" />
     </Button>
-    <Button ml={4}>
+    <Button ml={4} width={0} bg="gray.200">
       <DiscordIcon />
     </Button>
   </Flex>

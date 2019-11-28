@@ -12,8 +12,14 @@ import {
   AccordionItem,
   AccordionHeader,
   AccordionIcon,
-  AccordionPanel
+  AccordionPanel,
+  Flex,
+  Text,
+  Image
 } from "@chakra-ui/core";
+import r_d from "../images/icons/r_d.svg";
+import smart from "../images/icons/smart.svg";
+import support from "../images/icons/support.svg";
 
 // eslint-disable-next-line
 
@@ -38,28 +44,32 @@ export const Services: React.FC = ({}) => {
     }
   `);
 
+  const icons = [support, smart, r_d];
+
   return (
-    <>
-      <Heading as="h3" size="lg" mb={4}>
-        Services we offer
-      </Heading>
-      <Accordion>
-        {data.allMarkdownRemark.edges.map(
-          ({ node: { id, frontmatter } }: any) => (
-            <AccordionItem>
-              <AccordionHeader px={0}>
-                <Heading as="h3" textAlign="left">
-                  {frontmatter.title}
-                </Heading>
-              </AccordionHeader>
-              <AccordionPanel pb={0} px={0}>
-                <p>{frontmatter.description}</p>
-                <Button my={4}>Get in touch</Button>
-              </AccordionPanel>
-            </AccordionItem>
-          )
-        )}
-      </Accordion>
-    </>
+    <Flex px="2rem">
+      {data.allMarkdownRemark.edges.map(
+        ({ node: { id, frontmatter } }: any) => (
+          <Flex
+            width="33.333333%"
+            direction="column"
+            pb="10vh"
+            pt="18vh"
+            pl="2rem"
+          >
+            <Image
+              src={icons.pop()}
+              height="15vh"
+              alignSelf="flex-start"
+              mb="15vh"
+            />
+            <Heading fontSize="sm" as="h1" mb={"1rem"}>
+              {frontmatter.title}
+            </Heading>
+            <Text fontSize="lg">{frontmatter.description}</Text>
+          </Flex>
+        )
+      )}
+    </Flex>
   );
 };

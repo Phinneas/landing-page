@@ -14,7 +14,8 @@ import {
   DrawerFooter,
   Button,
   Input,
-  useDisclosure
+  useDisclosure,
+  Box
 } from "@chakra-ui/core";
 import DorgMenu from "./DorgMenu";
 import DorgSocial from "./DorgSocial";
@@ -30,18 +31,26 @@ export const TopBar: React.FC = ({}) => {
     <>
       <Flex
         align="center"
+        wrap="wrap"
         justify="space-between"
         p={4}
-        position="sticky"
+        position="fixed"
         top={0}
+        right={0}
+        left={0}
+        zIndex={1000}
       >
         <Flex>
-          <Heading as="h1">
+          <Heading as="h1" size="sm">
             <Link to={"#"}>dOrg</Link>
           </Heading>
         </Flex>
         <Flex onClick={onOpen}>Menu</Flex>
+        <Heading as="h1" fontSize="xl" width={"100%"}>
+          Let's Build Together.
+        </Heading>
       </Flex>
+
       <Drawer
         isOpen={isOpen}
         placement="right"
