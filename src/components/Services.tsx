@@ -73,9 +73,11 @@ export const Services: React.FC = ({}) => {
             <Flex
               width="33.333333%"
               direction="column"
-              pb="10vh"
+              pb="20vh"
               pt="18vh"
-              pl="2rem"
+              px="2rem"
+              bg="gray.200"
+              color="gray.800"
             >
               <Image
                 src={icons.pop()}

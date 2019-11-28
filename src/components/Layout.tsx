@@ -8,16 +8,19 @@ import {
   Box,
   DefaultTheme,
   ThemeProvider,
-  theme
+  theme,
+  ColorModeProvider
 } from "@chakra-ui/core";
 import { stripe } from "../styles";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={{ ...theme, ...stripe }}>
-      <CSSReset />
-      <TopBar />
-      <main>{children}</main>
+      <ColorModeProvider value="dark">
+        <CSSReset />
+        <TopBar />
+        <main>{children}</main>
+      </ColorModeProvider>
     </ThemeProvider>
   );
 };

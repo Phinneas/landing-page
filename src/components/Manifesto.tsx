@@ -47,7 +47,6 @@ export const Manifesto: React.FC = ({}) => {
       justify="space-around"
     >
       <Box maxW={960} flexGrow={1}>
-        >
         <Heading as="h3" fontSize="sm" mb={4}>
           Our Principles
         </Heading>
