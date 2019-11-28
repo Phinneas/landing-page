@@ -9,6 +9,7 @@ import {
   Grid,
   Typography
 } from "@material-ui/core";
+import DAOcreator from "@dorgtech/daocreator-ui-v1";
 import LearnMore from "../components/LearnMore";
 import Cases from "../components/Cases";
 import SEO from "../components/Seo";
@@ -30,6 +31,7 @@ const IndexPage: React.FC<Props> = ({ classes }) => (
           Let&apos;s Build Together
         </Typography>
       </Grid>
+      <DAOcreator />
       <LearnMore />
       <Cases />
     </Grid>
