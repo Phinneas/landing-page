@@ -16,7 +16,8 @@ import {
   Flex,
   Text,
   Box,
-  Image
+  Image,
+  SimpleGrid
 } from "@chakra-ui/core";
 import r_d from "../images/icons/r_d.svg";
 import smart from "../images/icons/smart.svg";
@@ -53,9 +54,8 @@ export const Services: React.FC = ({}) => {
         pt={"25vh"}
         pb={"15vh"}
         minHeight="60vh"
-        align="center"
-        justify="space-around"
         id="services"
+        justify="center"
       >
         <Box maxW={960} flexGrow={1}>
           <Heading as="h1" fontSize="sm" mb={"1rem"}>
@@ -67,18 +67,10 @@ export const Services: React.FC = ({}) => {
           </Heading>
         </Box>
       </Flex>
-      <Flex px="2rem">
+      <SimpleGrid columns={[1, 1, 1, 3]} px="2rem">
         {data.allMarkdownRemark.edges.map(
           ({ node: { id, frontmatter } }: any) => (
-            <Flex
-              width="33.333333%"
-              direction="column"
-              pb="20vh"
-              pt="18vh"
-              px="2rem"
-              bg="gray.200"
-              color="gray.800"
-            >
+            <Box pb="20vh" pt="18vh" px="2rem">
               <Image
                 src={icons.pop()}
                 height="15vh"
@@ -89,10 +81,10 @@ export const Services: React.FC = ({}) => {
                 {frontmatter.title}
               </Heading>
               <Text fontSize="lg">{frontmatter.description}</Text>
-            </Flex>
+            </Box>
           )
         )}
-      </Flex>
+      </SimpleGrid>
     </>
   );
 };
