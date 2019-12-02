@@ -57,7 +57,7 @@ const TopBar: React.FC<Props> = ({ classes }) => {
               },
               {
                 title: "Create A DAO",
-                onClick: () => window.open("https://dorg.tech/#/dapp")
+                onClick: () => navigate("/dao-creator")
               },
               {
                 title: "Hire dOrg",

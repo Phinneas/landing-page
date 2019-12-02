@@ -1,4 +1,5 @@
 const path = require("path");
+const { IgnorePlugin } = require("webpack");
 const { createFilePath } = require("gatsby-source-filesystem");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -59,5 +60,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // our page layout component
       context: { id: node.id }
     });
+  });
+};
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        // replace native `scrypt` module with pure js `js-scrypt`
+        scrypt: "js-scrypt"
+      }
+    },
+    plugins: [
+      // ignore these plugins completely
+      new IgnorePlugin(/^(?:electron|ws)$/)
+    ],
+    mode: "production"
   });
 };
