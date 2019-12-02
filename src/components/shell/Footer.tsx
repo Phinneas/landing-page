@@ -26,6 +26,8 @@ const Footer: React.FC = ({}) => {
         align="center"
         justify="space-around"
         id="join"
+        bg={"gray.900"}
+        color={"gray.100"}
       >
         <Box maxW={960} flexGrow={1}>
           <DorgMenu />

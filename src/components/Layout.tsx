@@ -16,11 +16,9 @@ import { stripe } from "../styles";
 const Layout: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={{ ...theme, ...stripe }}>
-      <ColorModeProvider value="dark">
-        <CSSReset />
-        <TopBar />
-        <main>{children}</main>
-      </ColorModeProvider>
+      <CSSReset />
+      <TopBar />
+      <main>{children}</main>
     </ThemeProvider>
   );
 };

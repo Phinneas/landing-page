@@ -79,12 +79,12 @@ const CaseList: React.FC = ({}) => {
       direction="column"
       backgroundColor={casesState.sectionBg}
       align="center"
-      height="100vh"
+      height="140vh"
       justify="center"
       id="cases"
       color="white"
     >
-      <Heading as="h3" size="sm" textAlign="center">
+      <Heading as="h3" fontSize="sm" textAlign="center">
         Cases
       </Heading>
 
@@ -93,7 +93,7 @@ const CaseList: React.FC = ({}) => {
           <TabPanels>
             {data.allMarkdownRemark.edges.map(
               ({ node: { id, frontmatter } }: any) => (
-                <TabPanel maxWidth={"30em"}>
+                <TabPanel maxWidth={"40em"}>
                   <CaseCard {...frontmatter} />
                 </TabPanel>
               )

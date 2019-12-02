@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 1
 title: Autonomous
-description: Continuously adapt composition of processes in response to external feedback.
+description: dOrg was formed around the ideals that collective ownership builds trust and empowers groups of people in ways that gatekeepers prevent. We hope to pave the way for other collectives of developers and skilled workers to organize in inclusive, transparent ways.
 ---

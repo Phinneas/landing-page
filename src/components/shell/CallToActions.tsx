@@ -11,12 +11,12 @@ import DorgSocial from "./DorgSocial";
 const CallToActions: React.FC = ({}) => {
   return (
     <Flex flexDirection="row" flexWrap="wrap">
-      <Flex direction="column" bg={"gray.600"} minWidth={"50%"} p={"1rem"}>
+      <Flex direction="column" bg={"gray.100"} minWidth={"50%"} p={"1rem"}>
         <Heading as="h2" fontSize="sm" mb="1rem">
           Join us!
         </Heading>
         <Flex>
-          <Button bg="gray.800" size="lg" flexGrow={1}>
+          <Button bg="gray.200" flexGrow={1}>
             Fill out our agent form
           </Button>
           <DorgSocial />
@@ -26,9 +26,7 @@ const CallToActions: React.FC = ({}) => {
         <Heading as="h2" fontSize="sm" mb="1rem">
           Have a project?
         </Heading>
-        <Button bg="green.300" size="lg">
-          Get in touch
-        </Button>
+        <Button bg="green.300">Get in touch</Button>
       </Flex>
     </Flex>
   );

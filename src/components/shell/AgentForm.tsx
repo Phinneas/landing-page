@@ -25,6 +25,7 @@ const AgentForm: React.FC = ({}) => {
         align="center"
         justify="space-around"
         id="join"
+        bg={"gray.200"}
       >
         <Box maxW={960} flexGrow={1}>
           <Stack spacing={"2vh"} maxW={"40rem"} flexGrow={1}>
@@ -33,7 +34,9 @@ const AgentForm: React.FC = ({}) => {
             </Heading>
             <Input placeholder="Type your email address" />
             <Textarea placeholder="Tell us about yourself" />
-            <Button bg="blue.500">Submit</Button>
+            <Button bg="blue.500" alignSelf="flex-end">
+              Submit
+            </Button>
           </Stack>
         </Box>
       </Flex>

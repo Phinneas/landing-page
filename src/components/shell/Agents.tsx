@@ -22,16 +22,16 @@ const Agents: React.FC = ({}) => {
     <>
       <Flex pt={"0"} align="center" justify="space-around">
         <Box maxW={960} flexGrow={1}>
-          <Heading as="h2" size="sm" mb="2rem" id="agents">
+          <Heading as="h2" fontSize="sm" mb="2rem" id="agents">
             Meet dOrg
           </Heading>
         </Box>
       </Flex>
 
       <SimpleGrid columns={[2, 3, 4, 5]} gap={0}>
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
             display="block"
@@ -43,9 +43,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>
-        <Box w="100%" bg="blue.400" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.400" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -56,9 +56,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -69,9 +69,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.400" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.400" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -82,9 +82,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.700" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.400" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -95,9 +95,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -108,9 +108,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.600" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.300" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -121,9 +121,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -134,9 +134,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -147,9 +147,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.700" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.400" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -160,9 +160,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.600" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.300" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -173,9 +173,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -186,9 +186,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -199,9 +199,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -212,9 +212,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.400" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.400" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -225,9 +225,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -238,9 +238,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.600" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.300" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -251,9 +251,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />
@@ -264,9 +264,9 @@ const Agents: React.FC = ({}) => {
             @githubuser
           </Heading>
         </Box>{" "}
-        <Box w="100%" bg="blue.500" p="1.5rem" textAlign="center">
+        <Box w="100%" bg="gray.100" p="1.5rem" textAlign="center">
           <Image
-            src="https://bit.ly/sage-adebayo"
+            src="https://randomuser.me/api/portraits/men/97.jpg"
             width="100%"
             borderRadius="50%"
           />

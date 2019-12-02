@@ -1,5 +1,5 @@
 body {
-  font-family: "GT Walsheim Pro";
+  font-family: "Arial";
 }
 
 h1,
@@ -8,8 +8,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "GT Pressura Mono";
-  font-weight: normal !important;
+  font-family: "Arial";
+  /* font-weight: normal !important; */
 }
 
 * {

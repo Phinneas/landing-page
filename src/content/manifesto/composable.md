@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 4
 title: Composable
-description: Composed of self-contained processes that can be assembled in various combinations to satisfy specific requirements.
+description: Our organization is defined by self-contained processes, as mentioned in our GitBook, that continuously and autonomously adapt as we grow. We're always making new relationships, so our variety and workload of projects is constantly growing. This makes deployable teams and a modular mindset crucial.
 ---

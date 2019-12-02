@@ -27,7 +27,7 @@ const DorgSocial: React.FC = ({ children }) => (
     <Button width={0} bg="blue.300">
       <GitHubIcon />
     </Button>
-    <Button ml={4} width={0} bg="blue.800">
+    <Button ml={4} width={0} bg="blue.500">
       <DiscordIcon />
     </Button>
   </Flex>

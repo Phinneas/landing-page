@@ -41,14 +41,18 @@ export const TopBar: React.FC = ({}) => {
         zIndex={1000}
       >
         <Flex>
-          <Heading as="h1" size="sm">
+          <Heading as="h1" fontSize="sm">
             <Link to={"#"}>dOrg</Link>
           </Heading>
         </Flex>
+        <Flex onClick={onOpen}>English</Flex>
+
         <Flex onClick={onOpen}>Menu</Flex>
-        <Heading as="h1" fontSize="xl" width={"100%"}>
-          Let's Build Together.
-        </Heading>
+        <Box width="100%">
+          <Heading as="h1" fontSize="xl" maxWidth={"20rem"}>
+            Let's Build Together.
+          </Heading>
+        </Box>
       </Flex>
 
       <Drawer

@@ -135,9 +135,9 @@ export const stripe = {
   fontSizes: {
     display: "2rem",
     xs: "12px",
-    sm: "1rem",
+    sm: "1.2rem",
     md: "1rem",
-    lg: "1.4rem",
+    lg: "1.5rem",
     xl: "2.4rem",
     "2xl": "24px",
     "3xl": "28px",
@@ -167,7 +167,7 @@ export const stripe = {
     widest: "0.1em"
   },
   radii: {
-    md: "1rem",
+    md: "0",
     sm: "1rem",
     lg: "1rem",
     xl: "1rem"

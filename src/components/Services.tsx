@@ -50,32 +50,34 @@ export const Services: React.FC = ({}) => {
 
   return (
     <>
-      <Flex
-        pt={"25vh"}
-        pb={"15vh"}
-        minHeight="60vh"
-        id="services"
-        justify="center"
-      >
+      <Flex py={"25vh"} minHeight="60vh" id="services" justify="center">
         <Box maxW={960} flexGrow={1}>
           <Heading as="h1" fontSize="sm" mb={"1rem"}>
-            We exist to support an ecosystem
+            dOrg works on the future.
           </Heading>
           <Heading as="h2" fontSize="xl">
-            We exist to support an ecosystem. We exist to support an ecosystem.
-            We exist to support an ecosystem. We exist to support an ecosystem
+            A Web3 co-op that designs, develops & maintains projects of all
+            sizes. A Web3 co-op that designs, develops & maintains projects of
+            all sizes.
           </Heading>
         </Box>
       </Flex>
-      <SimpleGrid columns={[1, 1, 1, 3]} px="2rem">
+      <Flex justifyContent="space-around" pt="25vh" bg={"gray.200"}>
+        <Heading as="h1" maxW={960} flexGrow={1} fontSize="sm" mb={"1rem"}>
+          Services
+        </Heading>
+      </Flex>
+
+      <SimpleGrid columns={[1, 1, 1, 3]} px="2rem" bg={"gray.200"}>
         {data.allMarkdownRemark.edges.map(
           ({ node: { id, frontmatter } }: any) => (
-            <Box pb="20vh" pt="18vh" px="2rem">
+            <Box pt="1rem" pb="25vh" px="2rem">
               <Image
                 src={icons.pop()}
                 height="15vh"
                 alignSelf="flex-start"
-                mb="15vh"
+                mb="8vh"
+                ml="-1rem"
               />
               <Heading fontSize="sm" as="h1" mb={"1rem"}>
                 {frontmatter.title}
