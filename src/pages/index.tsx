@@ -43,8 +43,9 @@ const IndexPage: React.FC = ({}) => {
       <CallToActions />
       <Services />
       <Contact />
-      <Agents />
       <Manifesto />
+
+      <Agents />
       <AgentForm />
       <Footer />
     </Layout>

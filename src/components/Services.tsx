@@ -62,13 +62,13 @@ export const Services: React.FC = ({}) => {
           </Heading>
         </Box>
       </Flex>
-      <Flex justifyContent="space-around" pt="25vh" bg={"gray.200"}>
+      <Flex justifyContent="space-around" pt="25vh" bg={"gray.100"}>
         <Heading as="h1" maxW={960} flexGrow={1} fontSize="sm" mb={"1rem"}>
           Services
         </Heading>
       </Flex>
 
-      <SimpleGrid columns={[1, 1, 1, 3]} px="2rem" bg={"gray.200"}>
+      <SimpleGrid columns={[1, 1, 1, 3]} px="2rem" bg={"gray.100"}>
         {data.allMarkdownRemark.edges.map(
           ({ node: { id, frontmatter } }: any) => (
             <Box pt="1rem" pb="25vh" px="2rem">

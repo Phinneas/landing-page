@@ -33,7 +33,7 @@ export const TopBar: React.FC = ({}) => {
         align="center"
         wrap="wrap"
         justify="space-between"
-        p={4}
+        p={"1rem"}
         position="fixed"
         top={0}
         right={0}
@@ -42,17 +42,12 @@ export const TopBar: React.FC = ({}) => {
       >
         <Flex>
           <Heading as="h1" fontSize="sm">
-            <Link to={"#"}>dOrg</Link>
+            <Link to={"#"}>dOrg ––––– LETS BUILD TOGETHER</Link>
           </Heading>
         </Flex>
-        <Flex onClick={onOpen}>English</Flex>
-
-        <Flex onClick={onOpen}>Menu</Flex>
-        <Box width="100%">
-          <Heading as="h1" fontSize="xl" maxWidth={"20rem"}>
-            Let's Build Together.
-          </Heading>
-        </Box>
+        <Flex onClick={onOpen} algin="flex-end">
+          English • Menu
+        </Flex>
       </Flex>
 
       <Drawer

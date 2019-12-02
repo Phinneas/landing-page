@@ -15,3 +15,10 @@ h6 {
 * {
   transition: all 0.4s;
 }
+
+#cases *[aria-selected="false"] {
+  opacity: 0.5;
+}
+#cases *[aria-selected="true"] {
+  opacity: 1;
+}

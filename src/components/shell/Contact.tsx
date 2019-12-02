@@ -40,7 +40,7 @@ const Contact: React.FC = ({}) => {
             react and node front end architecture.
           </Text>
         </Flex>
-        <Flex direction="column" minWidth="15em" p={"2rem"} bg={"gray.100"}>
+        <Flex direction="column" minWidth="15em" p={"2rem"}>
           <List fontSize="lg" spacing="1rem">
             <ListItem color={"gray.600"}>
               <b>dOrg in the news headline here right here. </b>November 15th,
@@ -66,12 +66,18 @@ const Contact: React.FC = ({}) => {
         </Flex>
       </SimpleGrid>
 
-      <SimpleGrid columns={[1, 1, 2, 2]} pt="20vh" px="2rem" id="contact">
+      <SimpleGrid
+        columns={[1, 1, 2, 2]}
+        pt="20vh"
+        px="2rem"
+        id="contact"
+        bg={"gray.100"}
+      >
         <Flex direction="column" minWidth="15em" p={"0"}></Flex>
-        <Flex direction="column" minWidth="15em" p={"2rem"} bg={"gray.100"}>
+        <Flex direction="column" minWidth="15em" p={"2rem"}>
           <Text fontSize="lg">
-            We like to schedule an hour long cosult with new clients to sases
-            needs, decide what's possible, and iterate on an action plan.
+            We like to schedule an hour long cosult with new clients to assess
+            needs, decide what's possible and iterate on an action plan.
           </Text>
           <Button bg={"blue.500"} mt="2vh" alignSelf="flex-end">
             Schedule a meeting
@@ -85,6 +91,7 @@ const Contact: React.FC = ({}) => {
         minHeight="60vh"
         align="center"
         justify="space-around"
+        bg={"gray.100"}
       >
         <Box maxW={960} flexGrow={1}>
           <Stack spacing={"2vh"} maxW={"40rem"} flexGrow={1}>
