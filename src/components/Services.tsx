@@ -53,12 +53,12 @@ export const Services: React.FC = ({}) => {
       <Flex py={"25vh"} minHeight="60vh" id="services" justify="center">
         <Box maxW={960} flexGrow={1}>
           <Heading as="h1" fontSize="sm" mb={"1rem"}>
-            dOrg works on the future.
+            Who are we?
           </Heading>
           <Heading as="h2" fontSize="xl">
-            A Web3 co-op that designs, develops & maintains projects of all
-            sizes. A Web3 co-op that designs, develops & maintains projects of
-            all sizes.
+            dOrg is a Web3 co-op that designs, develops & maintains projects of
+            all sizes. We are a remote team of freelancers unified by the vision
+            of a web3 future.
           </Heading>
         </Box>
       </Flex>
@@ -77,7 +77,6 @@ export const Services: React.FC = ({}) => {
                 height="15vh"
                 alignSelf="flex-start"
                 mb="8vh"
-                ml="-1rem"
               />
               <Heading fontSize="sm" as="h1" mb={"1rem"}>
                 {frontmatter.title}

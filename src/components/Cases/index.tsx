@@ -79,13 +79,13 @@ const CaseList: React.FC = ({}) => {
       direction="column"
       backgroundColor={casesState.sectionBg}
       align="center"
-      height="140vh"
+      height="100vh"
       justify="center"
       id="cases"
       color="white"
     >
-      <Heading as="h3" fontSize="sm" textAlign="center">
-        Cases
+      <Heading as="h3" fontSize="sm">
+        Our Work
       </Heading>
 
       <Tabs index={casesState.tabIndex} onChange={handleTabsChange}>
@@ -102,16 +102,20 @@ const CaseList: React.FC = ({}) => {
         </Flex>
 
         <TabList
-          justifyContent="space-evenly"
+          justifyContent="center"
           flexDirection="row"
           flexWrap="wrap"
           alignSelf="flex-end"
           border={0}
+          position="absolute"
+          bottom={0}
+          left={0}
+          width={"100vw"}
         >
           {data.allMarkdownRemark.edges.map(
             ({ node: { id, frontmatter } }: any) => {
               return (
-                <Tab background={frontmatter.bgcolor} border={0}>
+                <Tab background={frontmatter.bgcolor} border={0} mx="1.5rem">
                   <Image
                     src={frontmatter.icon.publicURL}
                     maxHeight={"9vh"}

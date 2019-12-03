@@ -15,10 +15,12 @@ import {
   Button,
   Input,
   useDisclosure,
-  Box
+  Box,
+  Image
 } from "@chakra-ui/core";
 import DorgMenu from "./DorgMenu";
 import DorgSocial from "./DorgSocial";
+import DorgMark from "../../images/icons/dOrg-mark.svg";
 
 // import GitHubIcon from "../common/icons/GitHub";
 // import DiscordIcon from "../common/icons/Discord";
@@ -41,8 +43,12 @@ export const TopBar: React.FC = ({}) => {
         zIndex={1000}
       >
         <Flex>
-          <Heading as="h1" fontSize="sm">
-            <Link to={"#"}>dOrg ––––– LETS BUILD TOGETHER</Link>
+          <Heading as="h1" fontSize="sm" color={"white"} fontWeight="thin">
+            <Link to={"#"}>
+              {" "}
+              <Image src={DorgMark} height="2rem" display="inline" mr="1rem" />
+              dOrg ––––– LET'S BUILD TOGETHER
+            </Link>
           </Heading>
         </Flex>
         <Flex onClick={onOpen} algin="flex-end">

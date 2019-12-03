@@ -134,7 +134,7 @@ export const stripe = {
 
   fontSizes: {
     display: "2rem",
-    xs: "12px",
+    xs: "1rem",
     sm: "1.2rem",
     md: "1rem",
     lg: "1.5rem",

@@ -1,5 +1,5 @@
 ---
 order: 1
 title: Dapps, Smart Contracts & Subgraphs
-description: Develop, optimize, and test Solidity code for any smart contract use-case. Design and implement beautiful, reactive web3 apps.
+description: We develop, optimize, and test Solidity code for any smart contract use-case. From tooling pipelines to utility DAOs, we love to architect solutions to technical puzzles.
 ---

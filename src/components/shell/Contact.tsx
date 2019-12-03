@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 
 import {
   Heading,
@@ -12,7 +12,8 @@ import {
   Text,
   SimpleGrid,
   List,
-  ListItem
+  ListItem,
+  Link
 } from "@chakra-ui/core";
 import DorgSocial from "./DorgSocial";
 
@@ -42,25 +43,46 @@ const Contact: React.FC = ({}) => {
         </Flex>
         <Flex direction="column" minWidth="15em" p={"2rem"}>
           <List fontSize="lg" spacing="1rem">
-            <ListItem color={"gray.600"}>
-              <b>dOrg in the news headline here right here. </b>November 15th,
-              2019 on Reuters.org
+            <ListItem color={"gray.800"}>
+              <Link href="https://www.coindesk.com/dorg-founders-have-created-the-first-limited-liability-dao">
+                <Text color={"gray.400"} fontSize="xs">
+                  June 11th, 2019 on Coindesk.org
+                </Text>
+                <Heading as="h4" fontSize="sm" mb="0">
+                  dOrg Founders Have Created the First Limited Liability DAO
+                </Heading>
+              </Link>
             </ListItem>
-            <ListItem color={"gray.400"}>
-              <b>dOrg in the news headline here right here. </b>November 15th,
-              2019 on Reuters.org
+            <ListItem color={"gray.800"}>
+              <Link href="https://cointelegraph.com/news/dorg-llc-purports-to-be-first-legally-valid-dao-under-us-law">
+                <Text color={"gray.400"} fontSize="xs">
+                  June 12th, 2019 on Cointelegraph.org
+                </Text>
+                <Heading as="h4" fontSize="sm" mb="0">
+                  DOrg LLC Purports to be First Legally Valid DAO Under US Law
+                </Heading>
+              </Link>
             </ListItem>
-            <ListItem color={"gray.500"}>
-              <b>dOrg in the news headline here right here. </b>November 15th,
-              2019 on Reuters.org
+            <ListItem color={"gray.800"}>
+              <Link href="https://blockchaindefender.io/the-first-dao-with-legal-status-in-the-us-by-dorg/">
+                <Text color={"gray.400"} fontSize="xs">
+                  June 12th, 2019 on Blockchaindefender.io
+                </Text>
+                <Heading as="h4" fontSize="sm" mb="0">
+                  The First DAO with Legal Status in the US by dOrg
+                </Heading>
+              </Link>
             </ListItem>
-            <ListItem color={"gray.300"}>
-              <b>dOrg in the news headline here right here. </b>November 15th,
-              2019 on Reuters.org
-            </ListItem>
-            <ListItem color={"gray.600"}>
-              <b>dOrg in the news headline here right here. </b>November 15th,
-              2019 on Reuters.org
+
+            <ListItem color={"gray.800"}>
+              <Link href="https://blockonomi.com/dorg-create-first-legally-registered-dao/">
+                <Text color={"gray.400"} fontSize="xs">
+                  June 15th, 2019 on Blockonomi.com
+                </Text>
+                <Heading as="h4" fontSize="sm" mb="0">
+                  Blockchain Developers dOrg Create First Legally Registered DAO
+                </Heading>
+              </Link>
             </ListItem>
           </List>
         </Flex>
