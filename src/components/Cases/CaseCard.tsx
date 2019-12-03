@@ -5,6 +5,9 @@ import { Image, Heading, Flex, Text, Box, Link, Button } from "@chakra-ui/core";
 
 // eslint-disable-next-line
 interface Props {
+  word_mark: {
+    publicURL: string;
+  };
   icon: {
     publicURL: string;
   };
@@ -19,7 +22,7 @@ interface Props {
 }
 
 const CaseCard: React.FC<Props> = ({
-  icon,
+  word_mark,
   title,
   bgcolor,
   description,
@@ -31,11 +34,11 @@ const CaseCard: React.FC<Props> = ({
 }) => (
   <>
     <Flex height={"20vh"} align={"center"} justifyContent={"space-around"}>
-      <Image height={"110%"} maxHeight={"30vh"} src={icon.publicURL} />
+      <Image height={"110%"} maxHeight={"30vh"} src={word_mark.publicURL} />
     </Flex>
 
     <Text textAlign="center" fontSize="lg">
-      {description} – {excerpt}
+      {excerpt}
     </Text>
     <Text textAlign="center" mt="1rem">
       {github != undefined ? (
