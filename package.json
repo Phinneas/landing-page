@@ -5,11 +5,13 @@
   "version": "0.1.0",
   "dependencies": {
     "@dorgtech/daocreator-ui-v1": "^0.2.0-rc.8",
+    "@loadable/component": "^5.11.0",
     "@material-ui/core": "^4.5.1",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.5.0",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@types/loadable__component": "^5.10.0",
     "gatsby": "^2.17.4",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-manifest": "^2.2.23",
