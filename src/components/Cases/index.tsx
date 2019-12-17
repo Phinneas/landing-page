@@ -115,18 +115,12 @@ const CaseList: React.FC = ({}) => {
         py="10vh"
         flexGrow={1}
       >
-        <Image
-          src={DorgMark}
-          height="10rem"
-          display="inline"
-          mr="5vw"
-          pb="5vw"
-        />
+        <Image src={DorgMark} width="9vh" display="inline" mr="5vw" pb="5vw" />
 
         <Flex align="flex-start" direction="column">
           <Heading
             as="h3"
-            fontSize={["1.8em", "1.8em", "2.5em"]}
+            fontSize={["1.8em", "2em", "2.5em"]}
             lineHeight="1.1em"
             maxW="15em"
             fontWeight={900}
@@ -209,9 +203,11 @@ function CalendlyModal() {
       <Button
         size="md"
         onClick={onOpen}
-        backgroundColor={"RGB(78, 166, 138)"}
+        // backgroundColor={"RGB(78, 166, 138)"}
         rightIcon="calendar"
         mt={"1rem"}
+        backgroundColor="transparent"
+        border="2px solid #fff"
       >
         Schedule a meeting
       </Button>
