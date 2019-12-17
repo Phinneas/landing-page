@@ -10,8 +10,21 @@ import {
   TabPanel,
   Image,
   Flex,
-  Box
+  Box,
+  Button,
+  Stack,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Text
 } from "@chakra-ui/core";
+import Background from "../shell/Background";
+import DorgMark from "../../images/icons/dOrg-mark.svg";
 
 // eslint-disable-next-line
 
@@ -77,61 +90,166 @@ const CaseList: React.FC = ({}) => {
     tabIndexChanged(index);
   };
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Flex
       direction="column"
-      backgroundColor={casesState.sectionBg}
-      align="center"
-      height="100vh"
-      justify="center"
+      backgroundColor={"RGBA(82, 82, 80, .5)"}
+      align="start"
+      minH="100vh"
       id="cases"
       color="white"
+      position="relative"
+      w="100%"
+      // pb="5vh"
     >
-      <Heading as="h3" fontSize="sm">
-        Our Work
-      </Heading>
+      <Background />
 
-      <Tabs index={casesState.tabIndex} onChange={handleTabsChange}>
-        <Flex justifyContent={"space-around"}>
-          <TabPanels>
-            {data.allMarkdownRemark.edges.map(
-              ({ node: { id, frontmatter } }: any) => (
-                <TabPanel maxWidth={"40em"}>
-                  <CaseCard {...frontmatter} />
-                </TabPanel>
-              )
-            )}
-          </TabPanels>
+      <Flex
+        width="100%"
+        align="center"
+        direction="row"
+        px={["5vw"]}
+        flexWrap="wrap"
+        py="10vh"
+        flexGrow={1}
+      >
+        <Image
+          src={DorgMark}
+          height="10rem"
+          display="inline"
+          mr="5vw"
+          pb="5vw"
+        />
+
+        <Flex align="flex-start" direction="column">
+          <Heading
+            as="h3"
+            fontSize={["1.8em", "1.8em", "2.5em"]}
+            lineHeight="1.1em"
+            maxW="15em"
+            fontWeight={900}
+            textAlign="left"
+          >
+            A freelancer cooperative committed to enhancing means of
+            coordination.
+          </Heading>
+          <CalendlyModal />
         </Flex>
+      </Flex>
 
+      <Tabs
+        index={casesState.tabIndex}
+        onChange={handleTabsChange}
+        width="100%"
+        display="flex"
+        flexDir="column"
+        justifyContent="flex-end"
+      >
+        <Heading as="h4" fontSize="sm" mb="1rem" pl="5vw">
+          Selected Work
+        </Heading>
         <TabList
-          justifyContent="center"
+          justifyContent="flex-start"
           flexDirection="row"
-          flexWrap="wrap"
-          alignSelf="flex-end"
+          // flexWrap="wrap"
+          // position="absolute"
+          alignSelf="flex-start"
+          pl="5vw"
           border={0}
-          position="absolute"
-          bottom={0}
-          left={0}
-          width={"100vw"}
+          // bottom={0}
+          // left={0}
         >
           {data.allMarkdownRemark.edges.map(
             ({ node: { id, frontmatter } }: any) => {
               return (
-                <Tab background={frontmatter.bgcolor} border={0} mx="1.5rem">
+                <Tab
+                  background={frontmatter.bgcolor}
+                  width="6.5rem"
+                  height="5.5rem"
+                  ml="-3px"
+                  border={"0"}
+                  backgroundColor={frontmatter.bgcolor.slice(1)}
+                >
                   <Image
                     src={frontmatter.icon.publicURL}
-                    maxHeight={"9vh"}
-                    maxWidth={"9vh"}
+                    style={{
+                      width: "4rem",
+                      height: "100%"
+                    }}
                   />
                 </Tab>
               );
             }
           )}
         </TabList>
+        <TabPanels
+          background={casesState.sectionBg}
+          mt="-1px"
+          transition="all 1s"
+        >
+          {data.allMarkdownRemark.edges.map(
+            ({ node: { id, frontmatter } }: any) => (
+              <TabPanel>
+                <CaseCard {...frontmatter} />
+              </TabPanel>
+            )
+          )}
+        </TabPanels>
       </Tabs>
     </Flex>
   );
 };
+
+function CalendlyModal() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <>
+      <Button
+        size="md"
+        onClick={onOpen}
+        backgroundColor={"RGB(78, 166, 138)"}
+        rightIcon="calendar"
+        mt={"1rem"}
+      >
+        Schedule a meeting
+      </Button>
+
+      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader
+            fontSize="1em"
+            as="h4"
+            alignText="center"
+            fontWeight={300}
+          >
+            We look forward to meeting.
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <div style={{ height: "50vh", width: "100%" }}>
+              <iframe
+                src="https://calendly.com/dorg"
+                width="100%"
+                height="100%"
+                frameborder="0"
+                style={{ backgroundColor: "transparent" }}
+              ></iframe>
+            </div>
+          </ModalBody>
+
+          <ModalFooter>
+            <Text>Email info & resumes to ops@dorg.tech</Text>
+            <Button variantColor="blue" mr={3} onClick={onClose}>
+              Done
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+}
 
 export default CaseList;

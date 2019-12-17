@@ -50,38 +50,51 @@ export const Services: React.FC = ({}) => {
 
   return (
     <>
-      <Flex py={"25vh"} minHeight="60vh" id="services" justify="center">
-        <Box maxW={960} flexGrow={1}>
+      <Flex
+        px={["5vw", "10vw", "20vw"]}
+        py="25vh"
+        minHeight="60vh"
+        id="services"
+        justify="center"
+      >
+        <Box flexGrow={1}>
           <Heading as="h1" fontSize="sm" mb={"1rem"}>
             Who are we?
           </Heading>
-          <Heading as="h2" fontSize="xl">
-            dOrg is a Web3 co-op that designs, develops & maintains projects of
-            all sizes. We are a remote team of freelancers unified by the vision
-            of a web3 future.
+          <Heading as="h2" fontSize="xl" textAlign="left">
+            dOrg is a freelancer cooperative of devOps, designers and developers
+            committed to enhancing the means of coordination 👾.
           </Heading>
         </Box>
       </Flex>
-      <Flex justifyContent="space-around" pt="25vh" bg={"gray.100"}>
-        <Heading as="h1" maxW={960} flexGrow={1} fontSize="sm" mb={"1rem"}>
+      <Flex justifyContent="space-around" pt="25vh" pb="5vw" bg={"gray.100"}>
+        <Heading
+          as="h1"
+          px={["5vw", "10vw", "20vw"]}
+          flexGrow={1}
+          fontSize="lg"
+          textAlign="left"
+        >
           Services
         </Heading>
       </Flex>
 
-      <SimpleGrid columns={[1, 1, 1, 3]} px="2rem" bg={"gray.100"}>
+      <SimpleGrid columns={[1, 1, 1, 3]} px="2.5vw" bg={"gray.100"}>
         {data.allMarkdownRemark.edges.map(
           ({ node: { id, frontmatter } }: any) => (
-            <Box pt="1rem" pb="25vh" px="2rem">
+            <Box pt="1rem" pb="25vh" px="2.5vw" textAlign="center">
+              <Heading fontSize="sm" as="h1" mb={"10vh"} textAlign="left">
+                {frontmatter.title}
+              </Heading>
+
               <Image
                 src={icons.pop()}
                 height="15vh"
-                alignSelf="flex-start"
-                mb="8vh"
+                mb="10vh"
+                opacity={0.9}
+                display="inline-block"
               />
-              <Heading fontSize="sm" as="h1" mb={"1rem"}>
-                {frontmatter.title}
-              </Heading>
-              <Text fontSize="lg">{frontmatter.description}</Text>
+              <Text textAlign="left">{frontmatter.description}</Text>
             </Box>
           )
         )}

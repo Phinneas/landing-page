@@ -16,11 +16,17 @@ import {
   Input,
   useDisclosure,
   Box,
-  Image
+  Image,
+  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem
 } from "@chakra-ui/core";
 import DorgMenu from "./DorgMenu";
 import DorgSocial from "./DorgSocial";
 import DorgMark from "../../images/icons/dOrg-mark.svg";
+import "../../styles/style.css";
 
 // import GitHubIcon from "../common/icons/GitHub";
 // import DiscordIcon from "../common/icons/Discord";
@@ -36,23 +42,31 @@ export const TopBar: React.FC = ({}) => {
         wrap="wrap"
         justify="space-between"
         p={"1rem"}
-        position="fixed"
+        position="absolute"
         top={0}
         right={0}
         left={0}
         zIndex={1000}
       >
         <Flex>
-          <Heading as="h1" fontSize="sm" color={"white"} fontWeight="thin">
+          <Text color={"white"} fontWeight="thin">
             <Link to={"#"}>
               {" "}
-              <Image src={DorgMark} height="2rem" display="inline" mr="1rem" />
-              dOrg ––––– LET'S BUILD TOGETHER
+              <Image
+                src={DorgMark}
+                m={"5vw"}
+                height="8rem"
+                display="inline"
+                mr="1rem"
+              />
             </Link>
-          </Heading>
+          </Text>
         </Flex>
-        <Flex onClick={onOpen} algin="flex-end">
-          English • Menu
+        <Flex algin="flex-end">
+          {/* <Button variant="ghost" rightIcon="chevron-down" fontSize="1em">
+            English
+            </Button> */}
+          {/* <Button onClick={onOpen} rightIcon="drag-handle" variant="ghost" /> */}
         </Flex>
       </Flex>
 

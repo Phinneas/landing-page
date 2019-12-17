@@ -1,5 +1,7 @@
 body {
-  font-family: "Arial";
+  font-family: "Space Mono";
+  font-weight: 300 !important;
+  font-size: 20px;
 }
 
 h1,
@@ -8,16 +10,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Arial";
-  /* font-weight: normal !important; */
+  font-family: "Space Grotesk" !important;
+  font-weight: 900 !important;
 }
 
 * {
-  transition: all 0.4s;
+  /* transition: all 0.4s; */
 }
 
 #cases *[aria-selected="false"] {
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 #cases *[aria-selected="true"] {
   opacity: 1;

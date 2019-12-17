@@ -14,6 +14,7 @@ import Contact from "../components/shell/Contact";
 import Agents from "../components/shell/Agents";
 import AgentForm from "../components/shell/AgentForm";
 import Footer from "../components/shell/Footer";
+import "../styles/style.css";
 
 import {
   Heading,
@@ -40,14 +41,14 @@ const IndexPage: React.FC = ({}) => {
     <Layout>
       <SEO title="Home" />
       <Cases />
-      <CallToActions />
-      <Services />
-      <Contact />
-      <Manifesto />
+      {/* <CallToActions /> */}
+      {/* <Services /> */}
+      {/* <Contact /> */}
+      {/* <Manifesto /> */}
 
-      <Agents />
-      <AgentForm />
-      <Footer />
+      {/* <Agents /> */}
+      {/* <AgentForm /> */}
+      {/* <Footer /> */}
     </Layout>
   );
 };

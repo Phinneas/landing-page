@@ -21,7 +21,7 @@ const Footer: React.FC = ({}) => {
   return (
     <>
       <Flex
-        py={"30vh"}
+        py={"25vh"}
         minHeight="60vh"
         align="center"
         justify="space-around"
@@ -29,7 +29,7 @@ const Footer: React.FC = ({}) => {
         bg={"gray.900"}
         color={"gray.100"}
       >
-        <Box maxW={960} flexGrow={1}>
+        <Box px={["5vw", "10vw", "20vw"]} flexGrow={1}>
           <DorgMenu />
           <DorgSocial />
           <Heading as="h4" fontSize="sm" textAlign="right" mt={".5rem"}>

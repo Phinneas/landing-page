@@ -1,7 +1,6 @@
 // export { default } from "./theme";
 import { theme } from "@chakra-ui/core";
 import "../fonts/index.css";
-import "./style.css";
 
 export const stripe = {
   colors: {
@@ -133,12 +132,12 @@ export const stripe = {
   },
 
   fontSizes: {
-    display: "2rem",
-    xs: "1rem",
-    sm: "1.2rem",
-    md: "1rem",
-    lg: "1.5rem",
-    xl: "2.4rem",
+    display: "2em",
+    xs: "1em",
+    sm: "1em",
+    md: "1em",
+    lg: "1.5em",
+    xl: "2.4em",
     "2xl": "24px",
     "3xl": "28px",
     "4xl": "36px",
@@ -167,7 +166,7 @@ export const stripe = {
     widest: "0.1em"
   },
   radii: {
-    md: "0",
+    md: "2px",
     sm: "1rem",
     lg: "1rem",
     xl: "1rem"

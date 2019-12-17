@@ -39,14 +39,8 @@ export const Manifesto: React.FC = ({}) => {
   `);
 
   return (
-    <Flex
-      pt={"25vh"}
-      pb={"15vh"}
-      minHeight="60vh"
-      align="center"
-      justify="space-around"
-    >
-      <Box maxW={960} flexGrow={1}>
+    <Flex py={"25vh"} minHeight="60vh" align="center" justify="space-around">
+      <Box px={["5vw", "10vw", "20vw"]} flexGrow={1}>
         <Heading as="h3" fontSize="sm" mb={4}>
           Our Principles
         </Heading>
@@ -60,7 +54,7 @@ export const Manifesto: React.FC = ({}) => {
                   </Heading>
                 </AccordionHeader>
                 <AccordionPanel pb={0} px={0}>
-                  <Text fontSize="lg" mb="1rem">
+                  <Text mb="1rem" textAlign="left">
                     {frontmatter.description}
                   </Text>
                 </AccordionPanel>

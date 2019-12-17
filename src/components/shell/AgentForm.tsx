@@ -20,15 +20,15 @@ const AgentForm: React.FC = ({}) => {
   return (
     <>
       <Flex
-        py={"20vh"}
-        minHeight="60vh"
+        py={"25vh"}
+        minHeight="100vh"
         align="center"
         justify="space-around"
         id="join"
         bg={"gray.200"}
       >
-        <Box maxW={960} flexGrow={1}>
-          <Stack spacing={"2vh"} maxW={"40rem"} flexGrow={1}>
+        <Box px={["5vw", "5vw", "20vw"]} flexGrow={1}>
+          <Stack spacing={"1rem"} maxW={"40rem"} flexGrow={1}>
             <Heading as="h2" fontSize="xl">
               Interested Agent?
             </Heading>

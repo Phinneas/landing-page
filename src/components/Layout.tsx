@@ -1,6 +1,5 @@
 import React from "react";
 // import theme from "../style/theme";
-// import Background from "./shell/Background";
 import { TopBar } from "./shell/TopBar";
 import {
   CSSReset,
@@ -17,7 +16,6 @@ const Layout: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={{ ...theme, ...stripe }}>
       <CSSReset />
-      <TopBar />
       <main>{children}</main>
     </ThemeProvider>
   );

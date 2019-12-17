@@ -39,11 +39,19 @@ module.exports = {
         path: `${__dirname}/src/content/manifesto`
       }
     },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/content/pages`
+      }
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content/json`
       }
     },
     `gatsby-transformer-sharp`,
@@ -74,7 +82,7 @@ module.exports = {
         background_color: `#2c4b56`,
         theme_color: `#4bd2c6`,
         display: `standalone`,
-        icon: `src/images/icon.png` // This path is relative to the root of the site.
+        icon: `src/images/icons/dOrg-mark.svg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-typescript`,
