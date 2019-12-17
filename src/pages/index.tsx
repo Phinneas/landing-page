@@ -14,6 +14,7 @@ import Contact from "../components/shell/Contact";
 import Agents from "../components/shell/Agents";
 import AgentForm from "../components/shell/AgentForm";
 import Footer from "../components/shell/Footer";
+import "../fonts/index.css";
 import "../styles/style.css";
 
 import {
