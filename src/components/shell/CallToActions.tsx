@@ -36,20 +36,20 @@ const CallToActions: React.FC = ({}) => {
         </Flex>
       </Flex> */}
       <Flex direction="column" minWidth={"50%"} flexGrow={1}>
-        <Calendly />
+        <Scheduling />
       </Flex>
     </Flex>
   );
 };
 
-const Calendly = () => {
+const Scheduling = () => {
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <iframe
-        src="https://calendly.com/nickjplace"
+        src="https://calendar.zoho.com/eventreqForm/248bc02ab8c914cb0eaff6558b63228e0305963999e2bb69efb226b576781b60529328fa0c809bf34e53d59319ef7221?theme=0&l=en&tz=America%2FNew_York"
+        frameborder="0"
         width="100%"
         height="100%"
-        frameborder="0"
         style={{ backgroundColor: "transparent" }}
       ></iframe>
     </div>
