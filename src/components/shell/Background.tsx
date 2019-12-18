@@ -4,7 +4,11 @@ import * as Ammo from "ammojs-typed";
 import * as BABYLON from "babylonjs";
 import BabylonScene, { SceneEventArgs } from "./Scene";
 
-export default class Background extends React.Component<{}, {}> {
+interface Props {
+  accent: string;
+}
+
+export default class Background extends React.Component<Props, {}> {
   onSceneMount = (e: SceneEventArgs) => {
     const { canvas, scene, engine } = e;
     var pick: BABYLON.Vector2 = new BABYLON.Vector2(0, 0);
@@ -33,7 +37,7 @@ export default class Background extends React.Component<{}, {}> {
       edge_blur: 1,
       chromatic_aberration: 1,
       distortion: 1,
-      grain_amount: 0.8
+      grain_amount: 0.6
       // dof_focus_distance: 18,
       // dof_pentagon: true
       // etc.
@@ -54,7 +58,7 @@ export default class Background extends React.Component<{}, {}> {
     BABYLON.Effect.ShadersStore.julianVertexShader =
       "precision highp float;attribute vec3 position;attribute vec2 uv;uniform mat4 worldViewProjection;varying vec2 vUV;void main(){gl_Position=worldViewProjection*vec4(position,1.),vUV=uv;}";
     BABYLON.Effect.ShadersStore.julianPixelShader =
-      "precision highp float;varying vec2 vUV;uniform sampler2D textureSampler;void main(){float pixel_w=3.,pixel_h=5.,rt_w=2000.,rt_h=2000.;vec3 tc=vec3(1.,0.,0.);float dx=pixel_w*(1./rt_w),dy=pixel_h*(1./rt_h);vec2 coord=vec2(dx*floor(vUV.x/dx),dy*floor(vUV.y/dy));tc=texture2D(textureSampler,coord).xyz;gl_FragColor=vec4(tc,1.);}";
+      "precision highp float;varying vec2 vUV;uniform sampler2D textureSampler;void main(){float pixel_w=2.,pixel_h=3.,rt_w=2000.,rt_h=2000.;vec3 tc=vec3(1.,0.,0.);float dx=pixel_w*(1./rt_w),dy=pixel_h*(1./rt_h);vec2 coord=vec2(dx*floor(vUV.x/dx),dy*floor(vUV.y/dy));tc=texture2D(textureSampler,coord).xyz;gl_FragColor=vec4(tc,1.);}";
 
     var julian = new BABYLON.PostProcess(
       "julian",
@@ -89,10 +93,10 @@ export default class Background extends React.Component<{}, {}> {
 
     var light = new BABYLON.HemisphericLight(
       "hemiLight",
-      new BABYLON.Vector3(0, -100, -100),
+      new BABYLON.Vector3(-30, -100, -100),
       scene
     );
-    light.intensity = 1;
+    light.intensity = 3;
     // var light = new BABYLON.PointLight("hemiLight", new BABYLON.Vector3(0, 0, -75), scene);
     // light.intensity = 800
 
@@ -112,7 +116,7 @@ export default class Background extends React.Component<{}, {}> {
 
     var colors = [
       new BABYLON.Color3(1, 1, 1),
-      new BABYLON.Color3(0.36, 0.76, 0.65),
+      new BABYLON.Color3(93 / 255, 195 / 255, 165 / 255),
       new BABYLON.Color3(0.2, 0.46, 0.38),
       new BABYLON.Color3(0.0, 0.0, 0.0),
       new BABYLON.Color3(0.32, 0.32, 0.31),
@@ -124,23 +128,23 @@ export default class Background extends React.Component<{}, {}> {
       new BABYLON.Color3(157 / 255, 224 / 255, 159 / 255)
     ];
 
-    for (var i = 0; i < 250; i++) {
+    for (var i = 0; i < 18; i++) {
       var pbr = new BABYLON.PBRMetallicRoughnessMaterial("pbr", scene);
-      pbr.baseColor = colors[2];
-      pbr.roughness = 0.8; // Let the texture controls the value
-      pbr.metallic = 0.1;
+      pbr.baseColor = colors[1];
+      pbr.roughness = 0.2; // Let the texture controls the value
+      pbr.metallic = 0;
       pbr.useLogarithmicDepth = true;
 
       // var plane = BABYLON.MeshBuilder.CreateGround("plane" + i, { width: 120, height: 70, subdivisions: i + 2 }, scene);
       var plane = BABYLON.MeshBuilder.CreatePolyhedron(
         "tk",
-        { size: 0.4, type: i % 11 },
+        { size: 2.7, type: i % 12 },
         scene
       );
 
       plane.position.y = Math.random() * 40 - 20;
       plane.position.x = Math.random() * 50 - 25;
-      plane.position.z = Math.random() * 20 - 20;
+      plane.position.z = Math.random() * 20 - 10;
       plane.material = pbr;
       plane.rotation.y = Math.random() * Math.PI;
       plane.rotation.x = Math.random() * Math.PI;
@@ -157,6 +161,19 @@ export default class Background extends React.Component<{}, {}> {
       new BABYLON.AmmoJSPlugin(undefined, Ammo.default)
     );
 
+    this.componentWillReceiveProps = (props: Props) => {
+      light.groundColor = BABYLON.Color3.FromHexString(props.accent);
+      // planes.forEach(plane => {
+      //   var pbr = new BABYLON.PBRMetallicRoughnessMaterial("pbr", scene);
+      //   pbr.baseColor = BABYLON.Color3.FromHexString(props.accent);
+      //   pbr.roughness = 0.8; // Let the texture controls the value
+      //   pbr.metallic = 0.1;
+      //   pbr.useLogarithmicDepth = true;
+
+      //   plane.material = pbr
+      // });
+    };
+
     planes.forEach(plane => {
       // plane.physicsImpostor = new BABYLON.PhysicsImpostor(plane, BABYLON.PhysicsImpostor.ParticleImpostor, { damping: 0, mass: 0, friction: 0, restitution: 0, fixedPoints: 15, margin: 0 }, scene);
       // plane.forceSharedVertices();
@@ -170,9 +187,8 @@ export default class Background extends React.Component<{}, {}> {
       // plane.physicsImpostor.pressure = -1;
       plane.physicsImpostor.velocityIterations = 2;
       plane.physicsImpostor.positionIterations = 2;
-      plane.physicsImpostor.stiffness = 10;
       plane.checkCollisions = false;
-      var spin = 2;
+      var spin = 8;
       plane.physicsImpostor.applyImpulse(
         new BABYLON.Vector3(0, 0, spin),
         plane.getAbsolutePosition().add(new BABYLON.Vector3(0.1, 0, 0))
@@ -181,14 +197,14 @@ export default class Background extends React.Component<{}, {}> {
         new BABYLON.Vector3(0, 0, -spin),
         plane.getAbsolutePosition().add(new BABYLON.Vector3(-0.1, 0, 0))
       );
-      plane.physicsImpostor.applyImpulse(
-        new BABYLON.Vector3(
-          Math.random() * -0.5,
-          Math.random() * -0.5,
-          Math.random() * -0.5
-        ),
-        plane.getAbsolutePosition()
-      );
+      // plane.physicsImpostor.applyImpulse(
+      //   new BABYLON.Vector3(
+      //     Math.random() * -0.5,
+      //     Math.random() * -0.5,
+      //     Math.random() * -0.5
+      //   ),
+      //   plane.getAbsolutePosition()
+      // );
 
       // plane.physicsImpostor.velocityIterations = 2;
       // plane.physicsImpostor.positionIterations = 2;
@@ -218,23 +234,21 @@ export default class Background extends React.Component<{}, {}> {
         scene.render();
       }
 
-      if (Math.random() > 0) {
-        var factor = 1;
-        planes.forEach(plane => {
-          // if (plane.position.z < -50 - (Math.random() * 10)) {
-          //   plane.position.z = 20
-          //   // plane.physicsImpostor!.setLinearVelocity(new BABYLON.Vector3(0, 0, -3))
-          //   var spin = 2 * -Math.floor(Math.random())
-          // plane.physicsImpostor!.applyImpulse(new BABYLON.Vector3(-2, 0, 0), plane.getAbsolutePosition().add(new BABYLON.Vector3(0, 1, 0)));
-          // plane.physicsImpostor!.applyImpulse(new BABYLON.Vector3(2, 0, 0), plane.getAbsolutePosition().add(new BABYLON.Vector3(0, -1, 0)));
-          plane.physicsImpostor!.applyImpulse(
-            new BABYLON.Vector3(-pick.x * factor, factor * -pick.y, 0),
-            plane.getAbsolutePosition()
-          );
-
-          // }
-        });
-      }
+      // if (Math.random() > .9) {
+      // scene.gravity = new BABYLON.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5)
+      // planes.forEach(plane => {
+      //   // if (plane.position.z < -50 - (Math.random() * 10)) {
+      //   //   plane.position.z = 20
+      //   //   // plane.physicsImpostor!.setLinearVelocity(new BABYLON.Vector3(0, 0, -3))
+      //   //   var spin = 2 * -Math.floor(Math.random())
+      //   // plane.physicsImpostor!.applyImpulse(new BABYLON.Vector3(-2, 0, 0), plane.getAbsolutePosition().add(new BABYLON.Vector3(0, 1, 0)));
+      //   // plane.physicsImpostor!.applyImpulse(new BABYLON.Vector3(2, 0, 0), plane.getAbsolutePosition().add(new BABYLON.Vector3(0, -1, 0)));
+      //   plane.physicsImpostor!.applyImpulse(
+      //     new BABYLON.Vector3(-pick.x * factor, factor * -pick.y, 0),
+      //     plane.getAbsolutePosition()
+      //   );
+      // });
+      // }
     });
   };
 

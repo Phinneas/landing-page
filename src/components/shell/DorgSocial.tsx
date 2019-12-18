@@ -25,7 +25,15 @@ import dOrgIcon from "../../images/icons/dOrg.svg";
 import LineIcon from "react-lineicons";
 
 const DorgSocial: React.FC = ({ children }) => (
-  <Flex justify="flex-end" direction="row">
+  <Flex
+    justify="flex-end"
+    direction="row"
+    width="100%"
+    align="end"
+    px="5vw"
+    py="1rem"
+    position="absolute"
+  >
     <Button
       width={0}
       bg="transparent"

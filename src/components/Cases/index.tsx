@@ -25,6 +25,7 @@ import {
 } from "@chakra-ui/core";
 import Background from "../shell/Background";
 import DorgMark from "../../images/icons/dOrg-mark.svg";
+import DorgSocial from "../shell/DorgSocial";
 
 // eslint-disable-next-line
 
@@ -104,7 +105,8 @@ const CaseList: React.FC = ({}) => {
       w="100%"
       // pb="5vh"
     >
-      <Background />
+      <DorgSocial />
+      <Background accent={casesState.sectionBg} />
 
       <Flex
         width="100%"
@@ -126,7 +128,7 @@ const CaseList: React.FC = ({}) => {
             fontWeight={900}
             textAlign="left"
           >
-            A freelancer cooperative committed to enhancing means of
+            A Web3 freelancer cooperative committed to enhancing means of
             coordination.
           </Heading>
           <CalendlyModal />
@@ -181,7 +183,7 @@ const CaseList: React.FC = ({}) => {
         <TabPanels
           background={casesState.sectionBg}
           mt="-1px"
-          transition="all 1s"
+          transition="all .1s"
         >
           {data.allMarkdownRemark.edges.map(
             ({ node: { id, frontmatter } }: any) => (
@@ -200,17 +202,30 @@ function CalendlyModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button
-        size="md"
-        onClick={onOpen}
-        // backgroundColor={"RGB(78, 166, 138)"}
-        rightIcon="calendar"
-        mt={"1rem"}
-        backgroundColor="transparent"
-        border="2px solid #fff"
-      >
-        Schedule a meeting
-      </Button>
+      <Flex mt={"1rem"} wrap="wrap">
+        <Button
+          size="md"
+          onClick={onOpen}
+          // backgroundColor={"RGB(78, 166, 138)"}
+          leftIcon="calendar"
+          backgroundColor="transparent"
+          border="2px solid #fff"
+          mr={"1rem"}
+        >
+          Schedule a meeting
+        </Button>
+        <Button
+          size="md"
+          onClick={() => {
+            window.open("https://dorgtech.typeform.com/to/a1rMob");
+          }}
+          // backgroundColor={"RGB(78, 166, 138)"}
+          leftIcon="info"
+          variant="ghost"
+        >
+          Interested Agent?
+        </Button>
+      </Flex>
 
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
@@ -237,7 +252,7 @@ function CalendlyModal() {
           </ModalBody>
 
           <ModalFooter>
-            <Text>Email info & resumes to ops@dorg.tech</Text>
+            <Text mr="1rem">Email info & resumes to ops@dorg.tech</Text>
             <Button variantColor="blue" mr={3} onClick={onClose}>
               Done
             </Button>
