@@ -24,7 +24,7 @@ import {
   Text
 } from "@chakra-ui/core";
 import Background from "../shell/Background";
-import DorgMark from "../../images/icons/dOrg-mark.svg";
+import DorgMark from "../../images/mark_o.svg";
 import DorgSocial from "../shell/DorgSocial";
 
 // eslint-disable-next-line
@@ -66,28 +66,24 @@ const CaseList: React.FC = ({}) => {
       }
     }
   `);
+  const [tab, setTab] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
+  const [bg, setBg] = useState("#fffff");
 
-  const [casesState, setCasesState] = useState<CaseState>({
-    sectionBg: data.allMarkdownRemark.edges[0].node.frontmatter.bgcolor.slice(
-      1
-    ),
-    tabIndex: 0
-  });
+  const autoPlayTimeout = setTimeout(() => {
+    /*nextTab()*/
+  }, 2500);
 
   function tabIndexChanged(i: number) {
-    setCasesState({
-      sectionBg: data.allMarkdownRemark.edges[i].node.frontmatter.bgcolor.slice(
-        1
-      ),
-      tabIndex: i
-    });
+    setTab(i);
+    setBg(data.allMarkdownRemark.edges[i].node.frontmatter.bgcolor.slice(1));
   }
-  function nextTab(i: number) {
-    tabIndexChanged(
-      (casesState.tabIndex + 1) % data.allMarkdownRemark.edges.length
-    );
+  function nextTab() {
+    tabIndexChanged((tab + 1) % data.allMarkdownRemark.edges.length);
   }
   const handleTabsChange = index => {
+    clearInterval(autoPlayTimeout);
+    setAutoplay(false);
     tabIndexChanged(index);
   };
 
@@ -96,7 +92,7 @@ const CaseList: React.FC = ({}) => {
   return (
     <Flex
       direction="column"
-      backgroundColor={"RGBA(82, 82, 80, .5)"}
+      backgroundColor={"RGBA(82, 82, 80, .8)"}
       align="start"
       minH="100vh"
       id="cases"
@@ -106,27 +102,35 @@ const CaseList: React.FC = ({}) => {
       // pb="5vh"
     >
       <DorgSocial />
-      <Background accent={casesState.sectionBg} />
+      <Background accent={"#fffff"} />
 
       <Flex
         width="100%"
         align="center"
-        direction="row"
+        direction="column"
         px={["5vw"]}
         flexWrap="wrap"
-        py="10vh"
         flexGrow={1}
       >
-        <Image src={DorgMark} width="9vh" display="inline" mr="5vw" pb="5vw" />
+        <Flex
+          align="center"
+          direction="column"
+          justifyContent="center"
+          minH={["70vh", "90vh", "90vh"]}
+        >
+          <Image
+            src={DorgMark}
+            height={["4em", "4em", "5em"]}
+            mb={["2rem", "2rem", "2rem"]}
+          />
 
-        <Flex align="flex-start" direction="column">
           <Heading
             as="h3"
-            fontSize={["1.8em", "2em", "2.5em"]}
+            fontSize={["1.4em", "2em", "2.5em"]}
             lineHeight="1.1em"
-            maxW="15em"
+            maxW="18em"
             fontWeight={900}
-            textAlign="left"
+            textAlign="center"
           >
             A Web3 freelancer cooperative committed to enhancing means of
             coordination.
@@ -136,52 +140,63 @@ const CaseList: React.FC = ({}) => {
       </Flex>
 
       <Tabs
-        index={casesState.tabIndex}
+        tabIndex={tab}
         onChange={handleTabsChange}
         width="100%"
         display="flex"
         flexDir="column"
         justifyContent="flex-end"
       >
-        <Heading as="h4" fontSize="sm" mb="1rem" pl="5vw">
-          Selected Work
-        </Heading>
-        <TabList
-          justifyContent="flex-start"
-          flexDirection="row"
-          // flexWrap="wrap"
-          // position="absolute"
-          alignSelf="flex-start"
-          pl="5vw"
-          border={0}
-          // bottom={0}
-          // left={0}
-        >
-          {data.allMarkdownRemark.edges.map(
-            ({ node: { id, frontmatter } }: any) => {
-              return (
-                <Tab
-                  background={frontmatter.bgcolor}
-                  width="6.5rem"
-                  height="5.5rem"
-                  ml="-3px"
-                  border={"0"}
-                  backgroundColor={frontmatter.bgcolor.slice(1)}
-                >
-                  <Image
-                    src={frontmatter.icon.publicURL}
-                    style={{
-                      width: "4rem",
-                      height: "100%"
-                    }}
-                  />
-                </Tab>
-              );
-            }
-          )}
-        </TabList>
+        <Flex justifyContent="center" flexDirection="row" flexWrap="wrap">
+          <Heading
+            as="h4"
+            lineHeight="4rem"
+            fontWeight="thin"
+            fontSize="sm"
+            mb="0"
+            textAlign="center"
+          >
+            Selected Work –
+          </Heading>
+          <TabList
+            justifyContent="center"
+            flexDirection="row"
+            // flexWrap="wrap"
+            // position="absolute"
+            alignSelf="flex-start"
+            // pl="5vw"
+            px="1rem"
+            border={0}
+            // bottom={0}
+            // left={0}
+          >
+            {data.allMarkdownRemark.edges.map(
+              ({ node: { id, frontmatter } }: any) => {
+                return (
+                  <Tab
+                    width="4.3rem"
+                    height="4.5rem"
+                    ml="-3px"
+                    border={"0"}
+                    px={".5rem"}
+                    // backgroundColor={frontmatter.bgcolor.slice(1)}
+                  >
+                    <Image
+                      src={frontmatter.icon.publicURL}
+                      style={{
+                        width: "4rem",
+                        height: "100%"
+                      }}
+                    />
+                  </Tab>
+                );
+              }
+            )}
+          </TabList>
+        </Flex>
+
         <TabPanels
-          background={casesState.sectionBg}
+          // background={bg}
           mt="-1px"
           transition="all .1s"
         >
@@ -202,32 +217,22 @@ function SchedulingModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Flex mt={"1rem"} wrap="wrap">
+      <Flex mt={"2rem"} wrap="wrap" justify="center" width="100%">
         <Button
           size="md"
           onClick={onOpen}
           // backgroundColor={"RGB(78, 166, 138)"}
-          leftIcon="calendar"
-          backgroundColor="transparent"
-          border="2px solid #fff"
-          mr={"1rem"}
+          background={"#4EA68A"}
+          height={"3.5rem"}
+          px="2rem"
+          fontWeight={600}
+          _hover={{ background: "#404038" }}
         >
           Schedule a meeting
         </Button>
-        <Button
-          size="md"
-          onClick={() => {
-            window.open("https://dorgtech.typeform.com/to/a1rMob");
-          }}
-          // backgroundColor={"RGB(78, 166, 138)"}
-          leftIcon="info"
-          variant="ghost"
-        >
-          Interested Agent?
-        </Button>
       </Flex>
 
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+      <Modal isOpen={isOpen} onClose={onClose} size="xl" bgColor={"gray.800"}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader
@@ -236,7 +241,7 @@ function SchedulingModal() {
             alignText="center"
             fontWeight={300}
           >
-            We look forward to meeting.
+            Scheduling a virtual meeting
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
@@ -252,7 +257,6 @@ function SchedulingModal() {
           </ModalBody>
 
           <ModalFooter>
-            <Text mr="1rem">Email info & resumes to ops@dorg.tech</Text>
             <Button variantColor="blue" mr={3} onClick={onClose}>
               Done
             </Button>

@@ -47,13 +47,14 @@ const CaseCard: React.FC<Props> = ({
     px="5vw"
     flexWrap="wrap"
     align="center"
-    py="1rem"
+    justify="center"
+    py="0rem"
   >
     <Flex
       height="9em"
       w="100%"
       direction="column"
-      align={["start", "start", "center"]}
+      align={["center", "center", "center"]}
       justify="center"
       maxW={["70vw", "70vw", "10vw"]}
     >
@@ -71,6 +72,7 @@ const CaseCard: React.FC<Props> = ({
       maxW="50%"
       minW="20em"
       py="1rem"
+      textAlign={["center", "left", "left"]}
     >
       <Text>{excerpt}</Text>
     </Flex>

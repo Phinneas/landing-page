@@ -10,8 +10,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Space Grotesk" !important;
-  font-weight: 900 !important;
+  font-family: "GT Pressura Mono" !important;
+  font-weight: 300 !important ;
 }
 
 * {
@@ -19,7 +19,7 @@ h6 {
 }
 
 #cases *[aria-selected="false"] {
-  /* opacity: 0.5; */
+  opacity: 0.3;
 }
 #cases *[aria-selected="true"] {
   opacity: 1;

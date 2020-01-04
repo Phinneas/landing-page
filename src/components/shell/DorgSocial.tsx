@@ -26,35 +26,51 @@ import LineIcon from "react-lineicons";
 
 const DorgSocial: React.FC = ({ children }) => (
   <Flex
-    justify="flex-end"
+    justify="space-between"
     direction="row"
     width="100%"
     align="end"
-    px="5vw"
+    px="1rem"
     py="1rem"
     position="absolute"
   >
-    <Button
-      width={0}
-      bg="transparent"
-      onClick={() => (location.href = "https://github.com/dOrgTech")}
-    >
-      <LineIcon name="github" size="sm" />
-    </Button>
-    <Button
-      width={0}
-      bg="transparent"
-      onClick={() => (location.href = "https://discord.gg/gywPHyW")}
-    >
-      <DiscordIcon />
-    </Button>
-    <Button
-      width={0}
-      bg="transparent"
-      onClick={() => (location.href = "https://twitter.com/dorg_tech")}
-    >
-      <LineIcon name="twitter" size="sm" />
-    </Button>
+    <Flex>
+      <Button
+        variant="outline"
+        onClick={() => window.open("https://docs.dorg.tech", "_blank")}
+      >
+        Docs
+      </Button>
+      <Button variant="outline" ml="-1px">
+        DAO Creator
+      </Button>
+    </Flex>
+    <Flex>
+      <Button
+        width={0}
+        bg="transparent"
+        ml=".5rem"
+        onClick={() => window.open("https://github.com/dOrgTech", "_blank")}
+      >
+        <LineIcon name="github" size="sm" />
+      </Button>
+      <Button
+        width={0}
+        bg="transparent"
+        ml=".5rem"
+        onClick={() => (window.open("mailto:contact@dorg.tech"), "_blank")}
+      >
+        <LineIcon name="envelope" size="sm" />
+      </Button>
+      <Button
+        width={0}
+        bg="transparent"
+        ml=".5rem"
+        onClick={() => (window.open("https://twitter.com/dorg_tech"), "_blank")}
+      >
+        <LineIcon name="twitter" size="sm" />
+      </Button>
+    </Flex>
   </Flex>
 );
 
