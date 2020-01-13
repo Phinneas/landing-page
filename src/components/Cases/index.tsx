@@ -120,16 +120,16 @@ const CaseList: React.FC = ({}) => {
         >
           <Image
             src={DorgMark}
-            height={["4em", "4em", "5em"]}
+            height={["6em", "6em", "7.5em"]}
             mb={["2rem", "2rem", "2rem"]}
           />
 
           <Heading
-            as="h3"
-            fontSize={["1.4em", "2em", "2.5em"]}
-            lineHeight="1.1em"
-            maxW="18em"
-            fontWeight={900}
+            as="h4"
+            lineHeight="4rem"
+            fontWeight="thin"
+            fontSize="sm"
+            mb="0"
             textAlign="center"
           >
             dOrg designs and develops web3 projects of all sizes
@@ -146,17 +146,17 @@ const CaseList: React.FC = ({}) => {
         flexDir="column"
         justifyContent="flex-end"
       >
+        <Heading
+          as="h4"
+          lineHeight="4rem"
+          fontWeight="thin"
+          fontSize="sm"
+          mb="0"
+          textAlign="center"
+        >
+          Selected Work
+        </Heading>
         <Flex justifyContent="center" flexDirection="row" flexWrap="wrap">
-          <Heading
-            as="h4"
-            lineHeight="4rem"
-            fontWeight="thin"
-            fontSize="sm"
-            mb="0"
-            textAlign="center"
-          >
-            Selected Work –
-          </Heading>
           <TabList
             justifyContent="center"
             flexDirection="row"

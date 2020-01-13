@@ -42,7 +42,7 @@ const DorgSocial: React.FC = ({ children }) => (
         Contribute
       </Button>
       <Button variant="outline" ml="-1px">
-        Play
+        DAO Creator
       </Button>
     </Flex>
     <Flex>
