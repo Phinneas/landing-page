@@ -39,10 +39,10 @@ const DorgSocial: React.FC = ({ children }) => (
         variant="outline"
         onClick={() => window.open("https://docs.dorg.tech", "_blank")}
       >
-        Docs
+        Contribute
       </Button>
       <Button variant="outline" ml="-1px">
-        DAO Creator
+        Play
       </Button>
     </Flex>
     <Flex>

@@ -132,8 +132,7 @@ const CaseList: React.FC = ({}) => {
             fontWeight={900}
             textAlign="center"
           >
-            A Web3 freelancer cooperative committed to enhancing means of
-            coordination.
+            dOrg designs and develops web3 projects of all sizes
           </Heading>
           <SchedulingModal />
         </Flex>
