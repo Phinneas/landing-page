@@ -109,31 +109,27 @@ const CaseList: React.FC = ({}) => {
         px={["5vw"]}
         flexWrap="wrap"
         flexGrow={1}
+        justifyContent="center"
+        marginTop="70px"
+        maxH={["60vh", "60vh", "60vh"]}
       >
-        <Flex
-          align="center"
-          direction="column"
-          justifyContent="center"
-          minH={["70vh", "70vh", "70vh"]}
-        >
-          <Image
-            src={DorgMark}
-            height={["6em", "6em", "7.5em"]}
-            mb={["2rem", "2rem", "2rem"]}
-          />
+        <Image
+          src={DorgMark}
+          height={["6em", "6em", "7.5em"]}
+          mb={["2rem", "2rem", "2rem"]}
+        />
 
-          <Heading
-            as="h4"
-            lineHeight="4rem"
-            fontWeight="thin"
-            fontSize="sm"
-            mb="0"
-            textAlign="center"
-          >
-            dOrg designs and develops web3 projects of all sizes
-          </Heading>
-          <SchedulingModal />
-        </Flex>
+        <Heading
+          as="h4"
+          lineHeight="4rem"
+          fontWeight="thin"
+          fontSize="sm"
+          mb="0"
+          textAlign="center"
+        >
+          dOrg designs and develops web3 projects of all sizes
+        </Heading>
+        <SchedulingModal />
       </Flex>
 
       <Tabs
