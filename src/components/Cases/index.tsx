@@ -10,9 +10,7 @@ import {
   TabPanel,
   Image,
   Flex,
-  Box,
   Button,
-  Stack,
   useDisclosure,
   Modal,
   ModalOverlay,
@@ -20,8 +18,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
-  Text
+  ModalFooter
 } from "@chakra-ui/core";
 import Background from "../shell/Background";
 import DorgMark from "../../images/mark_o.svg";
@@ -78,9 +75,11 @@ const CaseList: React.FC = ({}) => {
     setTab(i);
     setBg(data.allMarkdownRemark.edges[i].node.frontmatter.bgcolor.slice(1));
   }
+
   function nextTab() {
     tabIndexChanged((tab + 1) % data.allMarkdownRemark.edges.length);
   }
+
   const handleTabsChange = index => {
     clearInterval(autoPlayTimeout);
     setAutoplay(false);
@@ -99,7 +98,6 @@ const CaseList: React.FC = ({}) => {
       color="white"
       position="relative"
       w="100%"
-      // pb="5vh"
     >
       <DorgSocial />
       <Background accent={"#fffff"} />
@@ -109,33 +107,28 @@ const CaseList: React.FC = ({}) => {
         align="center"
         direction="column"
         px={["5vw"]}
-        flexWrap="wrap"
         flexGrow={1}
+        justifyContent="center"
+        marginTop="70px"
+        maxH={["60vh", "60vh", "60vh"]}
       >
-        <Flex
-          align="center"
-          direction="column"
-          justifyContent="center"
-          minH={["70vh", "90vh", "90vh"]}
-        >
-          <Image
-            src={DorgMark}
-            height={["6em", "6em", "7.5em"]}
-            mb={["2rem", "2rem", "2rem"]}
-          />
+        <Image
+          src={DorgMark}
+          height={["6em", "6em", "7.5em"]}
+          mb={["2rem", "2rem", "2rem"]}
+        />
 
-          <Heading
-            as="h4"
-            lineHeight="4rem"
-            fontWeight="thin"
-            fontSize="sm"
-            mb="0"
-            textAlign="center"
-          >
-            dOrg designs and develops web3 projects of all sizes
-          </Heading>
-          <SchedulingModal />
-        </Flex>
+        <Heading
+          as="h4"
+          lineHeight="4rem"
+          fontWeight="thin"
+          fontSize="sm"
+          mb="0"
+          textAlign="center"
+        >
+          dOrg designs and develops web3 projects of all sizes
+        </Heading>
+        <SchedulingModal />
       </Flex>
 
       <Tabs
@@ -166,8 +159,6 @@ const CaseList: React.FC = ({}) => {
             // pl="5vw"
             px="1rem"
             border={0}
-            // bottom={0}
-            // left={0}
           >
             {data.allMarkdownRemark.edges.map(
               ({ node: { id, frontmatter } }: any) => {
@@ -178,7 +169,6 @@ const CaseList: React.FC = ({}) => {
                     ml="-3px"
                     border={"0"}
                     px={".5rem"}
-                    // backgroundColor={frontmatter.bgcolor.slice(1)}
                   >
                     <Image
                       src={frontmatter.icon.publicURL}
@@ -194,11 +184,7 @@ const CaseList: React.FC = ({}) => {
           </TabList>
         </Flex>
 
-        <TabPanels
-          // background={bg}
-          mt="-1px"
-          transition="all .1s"
-        >
+        <TabPanels mt="-1px" transition="all .1s">
           {data.allMarkdownRemark.edges.map(
             ({ node: { id, frontmatter } }: any) => (
               <TabPanel>
@@ -220,7 +206,6 @@ function SchedulingModal() {
         <Button
           size="md"
           onClick={onOpen}
-          // backgroundColor={"RGB(78, 166, 138)"}
           background={"#4EA68A"}
           height={"3.5rem"}
           px="2rem"

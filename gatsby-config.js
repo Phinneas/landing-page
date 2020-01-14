@@ -82,7 +82,7 @@ module.exports = {
         background_color: `#2c4b56`,
         theme_color: `#4bd2c6`,
         display: `standalone`,
-        icon: `src/images/icons/favicon.svg` // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-typescript`,
