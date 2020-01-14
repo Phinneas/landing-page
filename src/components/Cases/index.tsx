@@ -10,9 +10,7 @@ import {
   TabPanel,
   Image,
   Flex,
-  Box,
   Button,
-  Stack,
   useDisclosure,
   Modal,
   ModalOverlay,
@@ -20,8 +18,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
-  Text
+  ModalFooter
 } from "@chakra-ui/core";
 import Background from "../shell/Background";
 import DorgMark from "../../images/mark_o.svg";
@@ -78,9 +75,11 @@ const CaseList: React.FC = ({}) => {
     setTab(i);
     setBg(data.allMarkdownRemark.edges[i].node.frontmatter.bgcolor.slice(1));
   }
+
   function nextTab() {
     tabIndexChanged((tab + 1) % data.allMarkdownRemark.edges.length);
   }
+
   const handleTabsChange = index => {
     clearInterval(autoPlayTimeout);
     setAutoplay(false);
@@ -99,7 +98,6 @@ const CaseList: React.FC = ({}) => {
       color="white"
       position="relative"
       w="100%"
-      // pb="5vh"
     >
       <DorgSocial />
       <Background accent={"#fffff"} />
@@ -116,7 +114,7 @@ const CaseList: React.FC = ({}) => {
           align="center"
           direction="column"
           justifyContent="center"
-          minH={["70vh", "90vh", "90vh"]}
+          minH={["70vh", "70vh", "70vh"]}
         >
           <Image
             src={DorgMark}
@@ -167,8 +165,6 @@ const CaseList: React.FC = ({}) => {
             // pl="5vw"
             px="1rem"
             border={0}
-            // bottom={0}
-            // left={0}
           >
             {data.allMarkdownRemark.edges.map(
               ({ node: { id, frontmatter } }: any) => {
@@ -179,7 +175,6 @@ const CaseList: React.FC = ({}) => {
                     ml="-3px"
                     border={"0"}
                     px={".5rem"}
-                    // backgroundColor={frontmatter.bgcolor.slice(1)}
                   >
                     <Image
                       src={frontmatter.icon.publicURL}
@@ -195,11 +190,7 @@ const CaseList: React.FC = ({}) => {
           </TabList>
         </Flex>
 
-        <TabPanels
-          // background={bg}
-          mt="-1px"
-          transition="all .1s"
-        >
+        <TabPanels mt="-1px" transition="all .1s">
           {data.allMarkdownRemark.edges.map(
             ({ node: { id, frontmatter } }: any) => (
               <TabPanel>
@@ -221,7 +212,6 @@ function SchedulingModal() {
         <Button
           size="md"
           onClick={onOpen}
-          // backgroundColor={"RGB(78, 166, 138)"}
           background={"#4EA68A"}
           height={"3.5rem"}
           px="2rem"
