@@ -46,7 +46,14 @@ module.exports = {
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-material-ui`,
-    `gatsby-plugin-mdx`
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#4bd2c6`,
+        showSpinner: true
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
