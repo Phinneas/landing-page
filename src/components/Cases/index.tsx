@@ -107,7 +107,6 @@ const CaseList: React.FC = ({}) => {
         align="center"
         direction="column"
         px={["5vw"]}
-        flexWrap="wrap"
         flexGrow={1}
         justifyContent="center"
         marginTop="70px"
