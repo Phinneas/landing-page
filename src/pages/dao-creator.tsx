@@ -6,7 +6,20 @@ import SEO from "../components/Seo";
 const DAOcreatorPage: React.FC = () => (
   <Layout>
     <SEO title="DAO Creator" />
-    <DAOcreator />
+    <DAOcreator
+      theme={{
+        palette: {
+          primary: {
+            main: "#252525",
+            contrastText: "#fafafa"
+          },
+          secondary: {
+            main: "#216367",
+            contrastText: "#fafafa"
+          }
+        }
+      }}
+    />
   </Layout>
 );
 
