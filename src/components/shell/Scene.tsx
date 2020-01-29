@@ -27,11 +27,9 @@ export default class Scene extends React.Component<
     if (this.engine) {
       this.engine.resize();
     }
+    let scrollHeight = document.getElementById("canvasHeight")!.offsetHeight;
     this.canvas.setAttribute("width", window.innerWidth + "px");
-    this.canvas.setAttribute(
-      "height",
-      this.canvas.parentElement!.clientHeight + "px"
-    );
+    this.canvas.setAttribute("height", scrollHeight + "px");
   };
 
   componentDidMount() {

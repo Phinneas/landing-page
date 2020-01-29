@@ -15,7 +15,12 @@ import {
   Button,
   Input,
   useDisclosure,
-  Image
+  Image,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Icon
 } from "@chakra-ui/core";
 
 import GitHubIcon from "../common/icons/GitHub";
@@ -26,24 +31,67 @@ import LineIcon from "react-lineicons";
 
 const DorgSocial: React.FC = ({ children }) => (
   <Flex
-    justify="space-between"
+    justify={["space-around", "space-around", "space-between"]}
+    flexWrap={["wrap", "nowrap"]}
     direction="row"
     width="100%"
     align="end"
-    px="1rem"
+    px={[0, "1rem"]}
     py="1rem"
-    position="absolute"
   >
     <Flex>
-      <Button
+      {/* <Button
         variant="outline"
         onClick={() => window.open("https://docs.dorg.tech", "_blank")}
       >
         Contribute
-      </Button>
-      <Button variant="outline" ml="-1px">
-        DAO Creator
-      </Button>
+      </Button> */}
+      <Menu>
+        <MenuButton
+          className="toolsButton"
+          _hover={{ background: "transparent" }}
+          _active={{ background: "transparent" }}
+          as={Button}
+          variant="invisible"
+          rightIcon="chevron-down"
+        >
+          Tools
+        </MenuButton>
+        <MenuList backgroundColor="transparent">
+          <MenuItem
+            backgroundColor="transparent"
+            _focus={{ background: "transparent" }}
+            _active={{ background: "transparent" }}
+            _hover={{ background: "transparent" }}
+            onClick={() => window.open("")}
+          >
+            Cotary Create
+            <Icon name="chevron-right" />
+          </MenuItem>
+          <MenuItem
+            backgroundColor="transparent"
+            _focus={{ background: "transparent" }}
+            _active={{ background: "transparent" }}
+            _hover={{ background: "transparent" }}
+            onClick={() => window.open("https://docs.dorg.tech")}
+          >
+            Docs
+            <Icon name="chevron-right" />
+          </MenuItem>
+          <MenuItem
+            backgroundColor="transparent"
+            _focus={{ background: "transparent" }}
+            _active={{ background: "transparent" }}
+            _hover={{ background: "transparent" }}
+            onClick={() =>
+              window.open("https://dorgtech.typeform.com/to/a1rMob")
+            }
+          >
+            Join us
+            <Icon name="chevron-right" />
+          </MenuItem>
+        </MenuList>
+      </Menu>
     </Flex>
     <Flex>
       <Button

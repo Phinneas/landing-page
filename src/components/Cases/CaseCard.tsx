@@ -43,20 +43,23 @@ const CaseCard: React.FC<Props> = ({
 }) => (
   <Stack
     direction="row"
-    spacing="5vw"
-    px="5vw"
+    spacing={["0", "0", "3rem"]}
+    px="3rem"
+    pt={["1rem", "1rem", "2rem"]}
     flexWrap="wrap"
     align="center"
-    justify="center"
-    py="0rem"
+    justify={["center", "space-between", "center"]}
+    pb="2rem"
+    background={bgcolor.substr(1)}
   >
     <Flex
-      height="9em"
+      pb={["2rem", "2rem", 0]}
+      pt={["1rem", "1rem", 0]}
       w="100%"
       direction="column"
       align={["center", "center", "center"]}
       justify="center"
-      maxW={["70vw", "70vw", "10vw"]}
+      maxW={["70vw", "70vw", "10rem"]}
     >
       <Image
         style={{
@@ -69,30 +72,51 @@ const CaseCard: React.FC<Props> = ({
     <Flex
       justifyContent="center"
       direction="column"
-      maxW="50%"
-      minW="20em"
-      py="1rem"
       textAlign={["center", "left", "left"]}
+      maxWidth={["100%", "70vw", "50vw", "40rem"]}
+      pb={["1rem", 0]}
     >
       <Text>{excerpt}</Text>
     </Flex>
-    <Flex maxW="1rem" align="center" justifyContent="center" direction="column">
+    <Flex
+      maxW={["100%", "1rem"]}
+      ml={[0, "1rem"]}
+      mt={["1rem", "0"]}
+      align="center"
+      justifyContent="center"
+      direction={["row", "column"]}
+    >
       {github != undefined ? (
-        <Button onClick={() => window.open(github)} variant="unstyled" mx="0">
+        <Button
+          onClick={() => window.open(github)}
+          variant="unstyled"
+          mx="0"
+          textAlign="center"
+        >
           <LineIcon name="github" size="sm" />
         </Button>
       ) : (
         ""
       )}
       {article != undefined ? (
-        <Button onClick={() => window.open(article)} variant="unstyled" mx="0">
+        <Button
+          onClick={() => window.open(article)}
+          variant="unstyled"
+          mx="0"
+          textAlign="center"
+        >
           <LineIcon name="link" size="sm" />
         </Button>
       ) : (
         ""
       )}
       {spec != undefined ? (
-        <Button onClick={() => window.open(spec)} variant="unstyled" mx="0">
+        <Button
+          onClick={() => window.open(spec)}
+          variant="unstyled"
+          mx="0"
+          textAlign="center"
+        >
           <LineIcon name="library" size="sm" />
         </Button>
       ) : (

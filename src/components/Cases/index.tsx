@@ -18,7 +18,8 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter
+  ModalFooter,
+  Box
 } from "@chakra-ui/core";
 import Background from "../shell/Background";
 import DorgMark from "../../images/mark_o.svg";
@@ -89,55 +90,55 @@ const CaseList: React.FC = ({}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex
-      direction="column"
-      backgroundColor={"RGBA(82, 82, 80, .8)"}
-      align="start"
-      minH="100vh"
-      id="cases"
-      color="white"
-      position="relative"
-      w="100%"
-    >
-      <DorgSocial />
-      <Background accent={"#fffff"} />
+    <Box backgroundColor={"rgba(12,7,5,.85)"} id="canvasHeight">
+      <video id="background-video" loop autoPlay muted>
+        <source src={require("../../images/oscil.mp4")} type="video/mp4" />
+      </video>
 
       <Flex
-        width="100%"
-        align="center"
         direction="column"
-        px={["5vw"]}
-        flexGrow={1}
-        justifyContent="center"
-        marginTop="70px"
-        maxH={["60vh", "60vh", "60vh"]}
+        // backgroundColor={"RGBA(82, 82, 80, .8)"}
+        align="start"
+        minH={["100vh"]}
+        color="white"
+        position="relative"
+        w="100%"
+        pb={["10vh", "12vh"]}
       >
-        <Image
-          src={DorgMark}
-          height={["6em", "6em", "7.5em"]}
-          mb={["2rem", "2rem", "2rem"]}
-        />
+        <DorgSocial />
+        {/* <Background accent={"#fffff"} /> */}
 
-        <Heading
-          as="h4"
-          lineHeight="4rem"
-          fontWeight="thin"
-          fontSize="sm"
-          mb="0"
-          textAlign="center"
+        <Flex
+          width="100%"
+          align="center"
+          direction="column"
+          px={["7vw"]}
+          flexGrow={1}
+          justifyContent="center"
         >
-          dOrg designs and develops web3 projects of all sizes
-        </Heading>
-        <SchedulingModal />
-      </Flex>
+          <Image src={DorgMark} height={["6rem", "6rem", "7.5rem"]} />
 
-      <Tabs
-        tabIndex={tab}
-        onChange={handleTabsChange}
-        width="100%"
-        display="flex"
-        flexDir="column"
-        justifyContent="flex-end"
+          <Heading
+            as="h4"
+            fontSize="sm"
+            mb="0"
+            py={["3vh", "5vh"]}
+            textAlign="center"
+          >
+            dOrg designs and develops web3 projects of all sizes
+          </Heading>
+          <SchedulingModal />
+        </Flex>
+      </Flex>
+      <Flex
+        direction="column"
+        // backgroundColor={"RGBA(82, 82, 80, .8)"}
+        color="white"
+        position="relative"
+        w="100%"
+        minH={["auto", "30vh"]}
+        mt={["-7rem", "-8rem"]}
+        id="cases"
       >
         <Heading
           as="h4"
@@ -149,52 +150,63 @@ const CaseList: React.FC = ({}) => {
         >
           Selected Work
         </Heading>
-        <Flex justifyContent="center" flexDirection="row" flexWrap="wrap">
-          <TabList
-            justifyContent="center"
-            flexDirection="row"
-            // flexWrap="wrap"
-            // position="absolute"
-            alignSelf="flex-start"
-            // pl="5vw"
-            px="1rem"
-            border={0}
-          >
-            {data.allMarkdownRemark.edges.map(
-              ({ node: { id, frontmatter } }: any) => {
-                return (
-                  <Tab
-                    width="4.3rem"
-                    height="4.5rem"
-                    ml="-3px"
-                    border={"0"}
-                    px={".5rem"}
-                  >
-                    <Image
-                      src={frontmatter.icon.publicURL}
-                      style={{
-                        width: "4rem",
-                        height: "100%"
-                      }}
-                    />
-                  </Tab>
-                );
-              }
-            )}
-          </TabList>
-        </Flex>
+        <Tabs
+          tabIndex={tab}
+          onChange={handleTabsChange}
+          width="100%"
+          display="flex"
+          flexDir="column"
+          justifyContent="flex-end"
+        >
+          <Flex justifyContent="center" flexDirection="row" flexWrap="wrap">
+            <TabList
+              justifyContent="center"
+              flexDirection="row"
+              // flexWrap="wrap"
+              // position="absolute"
+              alignSelf="flex-start"
+              // pl="5vw"
+              px="1rem"
+              border={0}
+            >
+              {data.allMarkdownRemark.edges.map(
+                ({ node: { id, frontmatter } }: any) => {
+                  return (
+                    <Tab
+                      width="6rem"
+                      height={["3rem", "4rem"]}
+                      border={"0"}
+                      px={".5rem"}
+                      mb={"0"}
+                      backgroundColor={frontmatter.bgcolor.substr(1)}
+                    >
+                      <Image
+                        src={frontmatter.icon.publicURL}
+                        style={{
+                          width: "4rem",
+                          height: "120%",
+                          marginTop: "-5%"
+                        }}
+                      />
+                    </Tab>
+                  );
+                }
+              )}
+            </TabList>
+          </Flex>
 
-        <TabPanels mt="-1px" transition="all .1s">
-          {data.allMarkdownRemark.edges.map(
-            ({ node: { id, frontmatter } }: any) => (
-              <TabPanel>
-                <CaseCard {...frontmatter} />
-              </TabPanel>
-            )
-          )}
-        </TabPanels>
-      </Tabs>
-    </Flex>
+          <TabPanels transition="all .1s">
+            {data.allMarkdownRemark.edges.map(
+              ({ node: { id, frontmatter } }: any) => (
+                <TabPanel>
+                  <CaseCard {...frontmatter} />
+                </TabPanel>
+              )
+            )}
+          </TabPanels>
+        </Tabs>
+      </Flex>
+    </Box>
   );
 };
 
@@ -202,7 +214,7 @@ function SchedulingModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Flex mt={"2rem"} wrap="wrap" justify="center" width="100%">
+      <Flex wrap="wrap" justify="center" width="100%">
         <Button
           size="md"
           onClick={onOpen}

@@ -116,8 +116,8 @@ export const stripe = {
   },
 
   maxWidths: {
-    sm: "320px",
-    md: "448px",
+    sm: "448px",
+    md: "600px",
     lg: "600px",
     xl: "720px",
     "2xl": "896px"
