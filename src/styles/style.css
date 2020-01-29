@@ -2,8 +2,6 @@ body {
   font-family: "GT Pressura Mono";
   font-weight: 300 !important;
   font-size: 20px;
-  background: url("../images/abstract.jpeg") fixed;
-  background-size: cover;
 }
 
 h1,

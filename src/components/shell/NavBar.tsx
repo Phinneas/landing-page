@@ -29,7 +29,7 @@ import dOrgIcon from "../../images/icons/dOrg.svg";
 
 import LineIcon from "react-lineicons";
 
-const DorgSocial: React.FC = ({ children }) => (
+const NavBar: React.FC = ({ children }) => (
   <Flex
     justify={["space-around", "space-around", "space-between"]}
     flexWrap={["wrap", "nowrap"]}
@@ -57,7 +57,7 @@ const DorgSocial: React.FC = ({ children }) => (
         >
           Tools
         </MenuButton>
-        <MenuList backgroundColor="transparent">
+        <MenuList backgroundColor="rgba(12,7,5,1)">
           <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
@@ -122,4 +122,4 @@ const DorgSocial: React.FC = ({ children }) => (
   </Flex>
 );
 
-export default DorgSocial;
+export default NavBar;
