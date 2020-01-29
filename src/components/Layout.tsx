@@ -16,7 +16,9 @@ const Layout: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={{ ...theme, ...stripe }}>
       <CSSReset />
-      <main>{children}</main>
+      <Box as={"main"} backgroundColor={"rgba(12,7,5,1)"}>
+        {children}
+      </Box>
     </ThemeProvider>
   );
 };
