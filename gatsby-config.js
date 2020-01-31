@@ -82,11 +82,10 @@ module.exports = {
         background_color: `#2c4b56`,
         theme_color: `#4bd2c6`,
         display: `standalone`,
-        icon: `src/images/favicon.png` // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-material-ui`,
     `gatsby-plugin-mdx`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

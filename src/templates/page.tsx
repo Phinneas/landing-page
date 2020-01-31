@@ -2,14 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/Layout";
-import {
-  Grid,
-  WithStyles,
-  Theme,
-  createStyles,
-  withStyles
-} from "@material-ui/core";
 import SEO from "../components/Seo";
+import { Grid } from "@chakra-ui/core";
+import { MDXProvider } from "@mdx-js/react";
 
 // eslint-disable-next-line
 interface Props extends WithStyles<typeof styles> {
@@ -43,25 +38,7 @@ const PageTemplate: React.FC<Props> = ({ data: { mdx }, classes }) => {
   );
 };
 
-// STYLE
-const styles = (theme: Theme) =>
-  createStyles({
-    container: {
-      width: "80%",
-      maxWidth: "800px",
-      margin: "auto",
-      marginBottom: "20px"
-    },
-    link: {
-      color: "white"
-    },
-    listItem: {
-      marginLeft: "15px",
-      marginTop: "5px"
-    }
-  });
-
-export default withStyles(styles)(PageTemplate);
+export default PageTemplate;
 
 export const query = graphql`
   query PageQuery($id: String) {
