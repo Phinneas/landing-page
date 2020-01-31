@@ -59,7 +59,7 @@ const Hero: React.FC = ({}) => {
           maxW={["20em"]}
           fontWeight={[400, 300]}
         >
-          dOrg designs and develops web3 projects of all sizes.
+          dOrg designs and develops web3 projects of all sizes
         </Heading>
         <SchedulingModal />
       </Flex>

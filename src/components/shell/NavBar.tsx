@@ -58,7 +58,7 @@ const NavBar: React.FC = ({ children }) => (
         </MenuButton>
 
         <MenuList backgroundColor="transparent">
-          <MenuItem
+          {/* <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
@@ -67,7 +67,7 @@ const NavBar: React.FC = ({ children }) => (
           >
             Cotary Create
             <Icon name="chevron-right" />
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
@@ -107,19 +107,19 @@ const NavBar: React.FC = ({ children }) => (
         width={0}
         bg="transparent"
         ml=".25rem"
-        onClick={() => (window.open("mailto:contact@dorg.tech"), "_blank")}
+        onClick={() => (window.open("https://twitter.com/dorg_tech"), "_blank")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        <LineIcon name="envelope" size="sm" />
+        <LineIcon name="twitter" size="sm" />
       </Button>
       <Button
         width={0}
         bg="transparent"
         ml=".25rem"
-        onClick={() => (window.open("https://twitter.com/dorg_tech"), "_blank")}
+        onClick={() => (window.open("mailto:contact@dorg.tech"), "_blank")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        <LineIcon name="twitter" size="sm" />
+        <LineIcon name="envelope" size="sm" />
       </Button>
     </Flex>
   </Flex>
