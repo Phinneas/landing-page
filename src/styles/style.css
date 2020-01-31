@@ -11,7 +11,7 @@ h4,
 h5,
 h6 {
   font-family: "GT Pressura Mono" !important;
-  font-weight: 300 !important ;
+  /* font-weight: 300 !important ; */
 }
 
 * {
@@ -29,7 +29,8 @@ h6 {
 }
 
 #cases *[aria-selected="false"] {
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  border-bottom: 4px solid black;
 }
 #cases *[aria-selected="true"] {
   opacity: 1;

@@ -1,7 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXProvider } from "@mdx-js/react";
 import Layout from "../components/Layout";
 import {
   Grid,
@@ -10,9 +9,6 @@ import {
   createStyles,
   withStyles
 } from "@material-ui/core";
-import Header from "../components/common/mdx/Header";
-import Subheader from "../components/common/mdx/Subheader";
-import Body from "../components/common/mdx/Body";
 import SEO from "../components/Seo";
 
 // eslint-disable-next-line

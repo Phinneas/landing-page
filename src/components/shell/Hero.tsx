@@ -19,7 +19,7 @@ import {
   useDisclosure
 } from "@chakra-ui/core";
 import NavBar from "./NavBar";
-import DorgMark from "../../images/mark_o.svg";
+import DorgMark from "../../images/dorg_6.svg";
 
 const Hero: React.FC = ({}) => {
   return (
@@ -42,16 +42,22 @@ const Hero: React.FC = ({}) => {
         flexGrow={1}
         justifyContent="center"
       >
-        <Image src={DorgMark} height={["6rem", "6rem", "7.5rem"]} />
+        <Image
+          src={DorgMark}
+          mb={["-.5rem"]}
+          height={["4rem", "3.5rem", "4rem"]}
+        />
 
         <Heading
-          as="h4"
-          fontSize="sm"
+          as="h1"
+          fontSize={["1.5rem", "1.5rem", "2.6rem"]}
           mb="0"
-          py={["3vh", "5vh"]}
+          py={["4vh", "5vh"]}
           textAlign="center"
+          maxW={["20em"]}
+          fontWeight={[400, 300]}
         >
-          dOrg designs and develops web3 projects of all sizes
+          dOrg designs and develops web3 projects of all sizes.
         </Heading>
         <SchedulingModal />
       </Flex>
@@ -63,15 +69,16 @@ function SchedulingModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Flex wrap="wrap" justify="center" width="100%">
+      <Flex wrap="wrap" justify="inherit" width="100%">
         <Button
           size="md"
           onClick={onOpen}
-          background={"#4EA68A"}
+          background={"#FFD849"}
+          color={"#111"}
           height={"3.5rem"}
           px="2rem"
           fontWeight={600}
-          _hover={{ background: "rgba(12,7,5,1)" }}
+          _hover={{ background: "#999" }}
         >
           Schedule a meeting
         </Button>

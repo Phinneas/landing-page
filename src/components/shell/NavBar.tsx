@@ -23,8 +23,6 @@ import {
   Icon
 } from "@chakra-ui/core";
 
-import GitHubIcon from "../common/icons/GitHub";
-import DiscordIcon from "../common/icons/Discord";
 import dOrgIcon from "../../images/icons/dOrg.svg";
 
 import LineIcon from "react-lineicons";
@@ -36,7 +34,8 @@ const NavBar: React.FC = ({ children }) => (
     direction="row"
     width="100%"
     align="end"
-    px={[0, "1rem"]}
+    pr={[0, "2rem"]}
+    pl={[0, "1rem"]}
     py="1rem"
   >
     <Flex>
@@ -97,7 +96,7 @@ const NavBar: React.FC = ({ children }) => (
       <Button
         width={0}
         bg="transparent"
-        ml=".5rem"
+        ml=".25rem"
         onClick={() => window.open("https://github.com/dOrgTech", "_blank")}
       >
         <LineIcon name="github" size="sm" />
@@ -105,7 +104,7 @@ const NavBar: React.FC = ({ children }) => (
       <Button
         width={0}
         bg="transparent"
-        ml=".5rem"
+        ml=".25rem"
         onClick={() => (window.open("mailto:contact@dorg.tech"), "_blank")}
       >
         <LineIcon name="envelope" size="sm" />
@@ -113,7 +112,7 @@ const NavBar: React.FC = ({ children }) => (
       <Button
         width={0}
         bg="transparent"
-        ml=".5rem"
+        ml=".25rem"
         onClick={() => (window.open("https://twitter.com/dorg_tech"), "_blank")}
       >
         <LineIcon name="twitter" size="sm" />

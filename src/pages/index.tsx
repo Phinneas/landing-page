@@ -2,18 +2,10 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import Layout from "../components/Layout";
-import LearnMore from "../components/LearnMore";
 import Cases from "../components/Cases";
-import { Manifesto } from "../components/Manifesto";
-import { Services } from "../components/Services";
 import SEO from "../components/Seo";
-import DorgSocial from "../components/shell/DorgSocial";
 import DorgMenu from "../components/shell/NavBar";
 import CallToActions from "../components/shell/Hero";
-import Contact from "../components/shell/Contact";
-import Agents from "../components/shell/Agents";
-import AgentForm from "../components/shell/AgentForm";
-import Footer from "../components/shell/Footer";
 import "../fonts/index.css";
 import "../styles/style.css";
 
