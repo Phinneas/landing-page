@@ -16,7 +16,8 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  useDisclosure
+  useDisclosure,
+  Icon
 } from "@chakra-ui/core";
 import NavBar from "./NavBar";
 import DorgMark from "../../images/Asset 8.svg";
@@ -25,12 +26,13 @@ const Hero: React.FC = ({}) => {
   return (
     <Flex
       direction="column"
-      align="start"
+      align="space-around"
       minH={["100vh"]}
       color="white"
       position="relative"
       w="100%"
-      pb={["18vh", "12vh"]}
+      background={"radial-gradient(#563466, #3F2A57);"}
+      pb={["7rem"]}
     >
       <NavBar />
 
@@ -73,12 +75,14 @@ function SchedulingModal() {
         <Button
           size="md"
           onClick={onOpen}
-          background={"#4FCC95"}
+          background={"#55CB97"}
+          borderBottom=".2rem solid #3BA878"
           color={"#fff"}
+          // boxShadow="0 0 5px #3F2A57"
           height={"3.5rem"}
           px="2rem"
           fontWeight={600}
-          _hover={{ background: "#999" }}
+          _hover={{ background: "#3BA878", borderBottom: "0", color: "#dde" }}
         >
           Schedule a meeting
         </Button>

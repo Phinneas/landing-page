@@ -54,7 +54,7 @@ const CaseCard: React.FC<Props> = ({
   >
     <Flex
       pb={["2rem", "2rem", 0]}
-      pt={["1rem", "1rem", 0]}
+      pt={["1.5rem", "1rem", 0]}
       w="100%"
       direction="column"
       align={["center", "center", "center"]}

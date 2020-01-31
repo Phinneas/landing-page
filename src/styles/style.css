@@ -30,7 +30,8 @@ h6 {
 
 #cases *[aria-selected="false"] {
   /* opacity: 0.5; */
-  border-bottom: 0.2rem solid #4d3466;
+  border-bottom: 0.2rem solid transparent;
+  background: transparent;
 }
 #cases *[aria-selected="true"] {
   opacity: 1;

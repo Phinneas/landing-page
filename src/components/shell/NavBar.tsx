@@ -29,7 +29,7 @@ import LineIcon from "react-lineicons";
 
 const NavBar: React.FC = ({ children }) => (
   <Flex
-    justify={["space-around", "space-around", "space-between"]}
+    justify={["space-evenly", "space-around", "space-between"]}
     flexWrap={["wrap", "nowrap"]}
     direction="row"
     width="100%"
@@ -48,7 +48,7 @@ const NavBar: React.FC = ({ children }) => (
       <Menu>
         <MenuButton
           className="toolsButton"
-          _hover={{ background: "transparent" }}
+          _hover={{ background: "transparent", color: "#55CB97" }}
           _active={{ background: "transparent" }}
           as={Button}
           variant="invisible"
@@ -56,12 +56,12 @@ const NavBar: React.FC = ({ children }) => (
         >
           Tools
         </MenuButton>
-        <MenuList backgroundColor="rgba(12,7,5,1)">
+        <MenuList backgroundColor="#4D3466">
           <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
-            _hover={{ background: "transparent" }}
+            _hover={{ background: "transparent", color: "#55CB97" }}
             onClick={() => window.open("")}
           >
             Cotary Create
@@ -71,7 +71,7 @@ const NavBar: React.FC = ({ children }) => (
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
-            _hover={{ background: "transparent" }}
+            _hover={{ background: "transparent", color: "#55CB97" }}
             onClick={() => window.open("https://docs.dorg.tech")}
           >
             Docs
@@ -81,7 +81,7 @@ const NavBar: React.FC = ({ children }) => (
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
-            _hover={{ background: "transparent" }}
+            _hover={{ background: "transparent", color: "#55CB97" }}
             onClick={() =>
               window.open("https://dorgtech.typeform.com/to/a1rMob")
             }

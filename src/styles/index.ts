@@ -166,7 +166,7 @@ export const stripe = {
     widest: "0.1em"
   },
   radii: {
-    md: ".1rem",
+    md: ".2rem",
     sm: "1rem",
     lg: "1rem",
     xl: "1rem"

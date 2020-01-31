@@ -19,7 +19,8 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
-  Box
+  Box,
+  Icon
 } from "@chakra-ui/core";
 import Background from "../shell/Background";
 import NavBar from "../shell/NavBar";
@@ -107,7 +108,7 @@ const CaseList: React.FC = ({}) => {
         mb="0"
         textAlign="center"
       >
-        Selected Work
+        Selected Work <Icon name="arrow-down" />
       </Heading>
       <Tabs
         tabIndex={tab}
@@ -119,13 +120,13 @@ const CaseList: React.FC = ({}) => {
       >
         <Flex justifyContent="center" flexDirection="row" flexWrap="wrap">
           <TabList
-            justifyContent="center"
+            justifyContent={["space-evenly", "center"]}
             flexDirection="row"
             // flexWrap="wrap"
             // position="absolute"
             alignSelf="flex-start"
             // pl="5vw"
-            px="1rem"
+            // px="1rem"
             border={0}
           >
             {data.allMarkdownRemark.edges.map(
@@ -136,9 +137,18 @@ const CaseList: React.FC = ({}) => {
                     height={["3rem", "4rem"]}
                     border={"0"}
                     px={".5rem"}
-                    borderRadius={".1rem .1rem 0 0 "}
+                    borderRadius={".2rem .2rem 0 0 "}
                     mb={"0"}
                     backgroundColor={frontmatter.bgcolor.substr(1)}
+                    onClick={e =>
+                      setTimeout(() => {
+                        window.scrollTo({
+                          left: 0,
+                          top: document.body.scrollHeight,
+                          behavior: "smooth"
+                        });
+                      }, 200)
+                    }
                   >
                     <Image
                       src={frontmatter.icon.publicURL}
