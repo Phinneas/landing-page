@@ -19,7 +19,7 @@ import {
   useDisclosure
 } from "@chakra-ui/core";
 import NavBar from "./NavBar";
-import DorgMark from "../../images/dorg_6.svg";
+import DorgMark from "../../images/Asset 8.svg";
 
 const Hero: React.FC = ({}) => {
   return (
@@ -73,8 +73,8 @@ function SchedulingModal() {
         <Button
           size="md"
           onClick={onOpen}
-          background={"#FFD849"}
-          color={"#111"}
+          background={"#4FCC95"}
+          color={"#fff"}
           height={"3.5rem"}
           px="2rem"
           fontWeight={600}

@@ -136,6 +136,7 @@ const CaseList: React.FC = ({}) => {
                     height={["3rem", "4rem"]}
                     border={"0"}
                     px={".5rem"}
+                    borderRadius={".1rem .1rem 0 0 "}
                     mb={"0"}
                     backgroundColor={frontmatter.bgcolor.substr(1)}
                   >
