@@ -20,7 +20,7 @@ import {
   Icon
 } from "@chakra-ui/core";
 import NavBar from "./NavBar";
-import DorgMark from "../../images/Asset 8.svg";
+import DorgMark from "../../images/Asset 17.svg";
 
 const Hero: React.FC = ({}) => {
   return (
@@ -31,7 +31,7 @@ const Hero: React.FC = ({}) => {
       color="white"
       position="relative"
       w="100%"
-      background={"radial-gradient(#563466, #3F2A57);"}
+      background={"radial-gradient( #023436, #023436);"}
       pb={["7rem"]}
     >
       <NavBar />
@@ -75,14 +75,14 @@ function SchedulingModal() {
         <Button
           size="md"
           onClick={onOpen}
-          background={"#55CB97"}
-          borderBottom=".2rem solid #3BA878"
+          background={"#1aaf71"}
+          borderBottom=".2rem solid #19956d"
           color={"#fff"}
           // boxShadow="0 0 5px #3F2A57"
           height={"3.5rem"}
           px="2rem"
           fontWeight={600}
-          _hover={{ background: "#3BA878", borderBottom: "0", color: "#dde" }}
+          _hover={{ background: "#19956d", borderBottom: "0", color: "#fff" }}
         >
           Schedule a meeting
         </Button>

@@ -57,15 +57,17 @@ const CaseCard: React.FC<Props> = ({
       pt={["1.5rem", "1rem", 0]}
       w="100%"
       direction="column"
-      align={["center", "center", "center"]}
+      align={["center", "start", "center"]}
       justify="center"
       maxW={["70vw", "70vw", "10rem"]}
     >
-      <Image
-        style={{
-          width: "10rem"
-        }}
-        src={word_mark.publicURL}
+      <Box
+        width={["10rem", "12rem", "10rem"]}
+        height={["10rem", "8rem", "10rem"]}
+        backgroundImage={"url(" + word_mark.publicURL + ")"}
+        backgroundSize="contain"
+        backgroundRepeat="no-repeat"
+        backgroundPosition={["center", "left center", "left center"]}
       />
     </Flex>
 
@@ -73,7 +75,7 @@ const CaseCard: React.FC<Props> = ({
       justifyContent="center"
       direction="column"
       textAlign={["center", "left", "left"]}
-      maxWidth={["100%", "70vw", "50vw", "40rem"]}
+      maxWidth={["100%", "70vw", "50vw", "38rem"]}
       pb={["1rem", 0]}
     >
       <Text>{excerpt}</Text>

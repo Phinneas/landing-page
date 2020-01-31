@@ -48,7 +48,7 @@ const NavBar: React.FC = ({ children }) => (
       <Menu>
         <MenuButton
           className="toolsButton"
-          _hover={{ background: "transparent", color: "#55CB97" }}
+          _hover={{ background: "transparent", color: "#1aaf71" }}
           _active={{ background: "transparent" }}
           as={Button}
           variant="invisible"
@@ -56,12 +56,13 @@ const NavBar: React.FC = ({ children }) => (
         >
           Tools
         </MenuButton>
-        <MenuList backgroundColor="#4D3466">
+
+        <MenuList backgroundColor="transparent">
           <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
-            _hover={{ background: "transparent", color: "#55CB97" }}
+            _hover={{ background: "transparent", color: "#1aaf71" }}
             onClick={() => window.open("")}
           >
             Cotary Create
@@ -71,7 +72,7 @@ const NavBar: React.FC = ({ children }) => (
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
-            _hover={{ background: "transparent", color: "#55CB97" }}
+            _hover={{ background: "transparent", color: "#1aaf71" }}
             onClick={() => window.open("https://docs.dorg.tech")}
           >
             Docs
@@ -81,7 +82,7 @@ const NavBar: React.FC = ({ children }) => (
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
-            _hover={{ background: "transparent", color: "#55CB97" }}
+            _hover={{ background: "transparent", color: "#1aaf71" }}
             onClick={() =>
               window.open("https://dorgtech.typeform.com/to/a1rMob")
             }
@@ -98,6 +99,7 @@ const NavBar: React.FC = ({ children }) => (
         bg="transparent"
         ml=".25rem"
         onClick={() => window.open("https://github.com/dOrgTech", "_blank")}
+        _hover={{ background: "transparent", color: "#1aaf71" }}
       >
         <LineIcon name="github" size="sm" />
       </Button>
@@ -106,6 +108,7 @@ const NavBar: React.FC = ({ children }) => (
         bg="transparent"
         ml=".25rem"
         onClick={() => (window.open("mailto:contact@dorg.tech"), "_blank")}
+        _hover={{ background: "transparent", color: "#1aaf71" }}
       >
         <LineIcon name="envelope" size="sm" />
       </Button>
@@ -114,6 +117,7 @@ const NavBar: React.FC = ({ children }) => (
         bg="transparent"
         ml=".25rem"
         onClick={() => (window.open("https://twitter.com/dorg_tech"), "_blank")}
+        _hover={{ background: "transparent", color: "#1aaf71" }}
       >
         <LineIcon name="twitter" size="sm" />
       </Button>
