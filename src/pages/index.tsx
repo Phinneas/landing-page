@@ -33,7 +33,7 @@ import Hero from "../components/shell/Hero";
 const IndexPage: React.FC = ({}) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="dOrg" />
       <Hero />
       <Cases />
     </Layout>

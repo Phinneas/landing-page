@@ -7,6 +7,7 @@ module.exports = {
     author: `@dOrg_tech`
   },
   plugins: [
+    "gatsby-plugin-chakra-ui",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
