@@ -23,7 +23,7 @@ import {
   Icon
 } from "@chakra-ui/core";
 import NavBar from "../shell/NavBar";
-import { windowShim } from "util/windowShim";
+import { windowShim } from "../../util/windowShim";
 
 // eslint-disable-next-line
 

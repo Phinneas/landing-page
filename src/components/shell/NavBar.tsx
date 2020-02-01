@@ -26,7 +26,7 @@ import {
 import dOrgIcon from "../../images/icons/dOrg.svg";
 
 import LineIcon from "react-lineicons";
-import { windowShim } from "util/windowShim";
+import { windowShim } from "../../util/windowShim";
 
 const NavBar: React.FC = ({ children }) => (
   <Flex

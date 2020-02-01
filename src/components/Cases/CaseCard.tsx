@@ -11,7 +11,7 @@ import {
   Button,
   Stack
 } from "@chakra-ui/core";
-import { windowShim } from "util/windowShim";
+import { windowShim } from "../../util/windowShim";
 
 // eslint-disable-next-line
 interface Props {
