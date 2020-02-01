@@ -26,6 +26,7 @@ import {
 import dOrgIcon from "../../images/icons/dOrg.svg";
 
 import LineIcon from "react-lineicons";
+import { windowShim } from "util/windowShim";
 
 const NavBar: React.FC = ({ children }) => (
   <Flex
@@ -41,7 +42,7 @@ const NavBar: React.FC = ({ children }) => (
     <Flex>
       {/* <Button
         variant="outline"
-        onClick={() => window.open("https://docs.dorg.tech", "_blank")}
+        onClick={() => windowShim.open("https://docs.dorg.tech", "_blank")}
       >
         Contribute
       </Button> */}
@@ -63,7 +64,7 @@ const NavBar: React.FC = ({ children }) => (
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
             _hover={{ background: "transparent", color: "#1aaf71" }}
-            onClick={() => window.open("")}
+            onClick={() => windowShim.open("")}
           >
             Cotary Create
             <Icon name="chevron-right" />
@@ -73,7 +74,7 @@ const NavBar: React.FC = ({ children }) => (
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
             _hover={{ background: "transparent", color: "#1aaf71" }}
-            onClick={() => window.open("https://docs.dorg.tech")}
+            onClick={() => windowShim.open("https://docs.dorg.tech")}
           >
             Docs
             <Icon name="chevron-right" />
@@ -84,7 +85,7 @@ const NavBar: React.FC = ({ children }) => (
             _active={{ background: "transparent" }}
             _hover={{ background: "transparent", color: "#1aaf71" }}
             onClick={() =>
-              window.open("https://dorgtech.typeform.com/to/a1rMob")
+              windowShim.open("https://dorgtech.typeform.com/to/a1rMob")
             }
           >
             Join us
@@ -98,7 +99,7 @@ const NavBar: React.FC = ({ children }) => (
         width={0}
         bg="transparent"
         ml=".25rem"
-        onClick={() => window.open("https://github.com/dOrgTech", "_blank")}
+        onClick={() => windowShim.open("https://github.com/dOrgTech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
         <LineIcon name="github" size="sm" />
@@ -107,7 +108,7 @@ const NavBar: React.FC = ({ children }) => (
         width={0}
         bg="transparent"
         ml=".25rem"
-        onClick={() => (window.open("https://twitter.com/dorg_tech"), "_blank")}
+        onClick={() => windowShim.open("https://twitter.com/dorg_tech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
         <LineIcon name="twitter" size="sm" />
@@ -116,7 +117,7 @@ const NavBar: React.FC = ({ children }) => (
         width={0}
         bg="transparent"
         ml=".25rem"
-        onClick={() => (window.open("mailto:contact@dorg.tech"), "_blank")}
+        onClick={() => windowShim.open("mailto:contact@dorg.tech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
         <LineIcon name="envelope" size="sm" />

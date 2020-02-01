@@ -22,8 +22,8 @@ import {
   Box,
   Icon
 } from "@chakra-ui/core";
-import Background from "../shell/Background";
 import NavBar from "../shell/NavBar";
+import { windowShim } from "util/windowShim";
 
 // eslint-disable-next-line
 
@@ -140,15 +140,7 @@ const CaseList: React.FC = ({}) => {
                     borderRadius={".2rem .2rem 0 0 "}
                     mb={"0"}
                     backgroundColor={frontmatter.bgcolor.substr(1)}
-                    onClick={e =>
-                      setTimeout(() => {
-                        window.scrollTo({
-                          left: 0,
-                          top: document.body.scrollHeight,
-                          behavior: "smooth"
-                        });
-                      }, 200)
-                    }
+                    onClick={e => windowShim.scrollToBottom()}
                   >
                     <Image
                       src={frontmatter.icon.publicURL}

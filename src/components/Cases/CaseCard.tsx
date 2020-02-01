@@ -11,6 +11,7 @@ import {
   Button,
   Stack
 } from "@chakra-ui/core";
+import { windowShim } from "util/windowShim";
 
 // eslint-disable-next-line
 interface Props {
@@ -90,7 +91,7 @@ const CaseCard: React.FC<Props> = ({
     >
       {github != undefined ? (
         <Button
-          onClick={() => window.open(github)}
+          onClick={() => windowShim.open(github)}
           variant="unstyled"
           mx="0"
           textAlign="center"
@@ -102,7 +103,7 @@ const CaseCard: React.FC<Props> = ({
       )}
       {article != undefined ? (
         <Button
-          onClick={() => window.open(article)}
+          onClick={() => windowShim.open(article)}
           variant="unstyled"
           mx="0"
           textAlign="center"
@@ -114,7 +115,7 @@ const CaseCard: React.FC<Props> = ({
       )}
       {spec != undefined ? (
         <Button
-          onClick={() => window.open(spec)}
+          onClick={() => windowShim.open(spec)}
           variant="unstyled"
           mx="0"
           textAlign="center"
