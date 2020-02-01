@@ -31,7 +31,7 @@ const Hero: React.FC = ({}) => {
       color="white"
       position="relative"
       w="100%"
-      background={"radial-gradient( #023436, #023436);"}
+      background={"radial-gradient( #004346, #004346, #172A3A);"}
       pb={["7rem"]}
     >
       <NavBar />

@@ -79,7 +79,7 @@ const CaseCard: React.FC<Props> = ({
       maxWidth={["100%", "70vw", "50vw", "38rem"]}
       pb={["1rem", 0]}
     >
-      <Text>{excerpt}</Text>
+      <Text fontFamily="inherit">{excerpt}</Text>
     </Flex>
     <Flex
       maxW={["100%", "1rem"]}
