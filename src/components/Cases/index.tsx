@@ -92,11 +92,9 @@ const CaseList: React.FC = ({}) => {
   return (
     <Flex
       direction="column"
-      // backgroundColor={"RGBA(82, 82, 80, .8)"}
       color="white"
       position="relative"
       w="100%"
-      minH={["auto", "30vh"]}
       mt={["-7rem", "-8rem"]}
       id="cases"
     >

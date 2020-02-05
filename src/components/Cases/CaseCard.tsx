@@ -1,5 +1,5 @@
 import * as React from "react";
-import LineIcon from "react-lineicons";
+// import LineIcon from "react-lineicons";
 
 import {
   Image,
@@ -96,7 +96,7 @@ const CaseCard: React.FC<Props> = ({
           mx="0"
           textAlign="center"
         >
-          <LineIcon name="github" size="sm" />
+          {/* <LineIcon name="github" size="sm" /> */}
         </Button>
       ) : (
         ""
@@ -108,7 +108,7 @@ const CaseCard: React.FC<Props> = ({
           mx="0"
           textAlign="center"
         >
-          <LineIcon name="link" size="sm" />
+          {/* <LineIcon name="link" size="sm" /> */}
         </Button>
       ) : (
         ""
@@ -120,7 +120,7 @@ const CaseCard: React.FC<Props> = ({
           mx="0"
           textAlign="center"
         >
-          <LineIcon name="library" size="sm" />
+          {/* <LineIcon name="library" size="sm" /> */}
         </Button>
       ) : (
         ""

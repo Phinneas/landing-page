@@ -80,14 +80,21 @@ module.exports = {
         name: `dOrg`,
         short_name: `dOrg`,
         start_url: `/`,
-        background_color: `#2c4b56`,
-        theme_color: `#4bd2c6`,
+        background_color: `radial-gradient( #004346, #004346, #172A3A)`,
+        theme_color: `#1aaf71`,
         display: `standalone`,
         icon: `src/images/favicon.svg` // This path is relative to the root of the site.
       }
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-mdx`
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#1aaf71`,
+        showSpinner: true
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

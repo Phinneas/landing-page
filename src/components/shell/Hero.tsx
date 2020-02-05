@@ -3,10 +3,8 @@ import { navigate } from "gatsby";
 
 import {
   Heading,
-  Stack,
   Flex,
   Button,
-  Link,
   Box,
   Image,
   Modal,
@@ -16,53 +14,39 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
-  useDisclosure,
-  Icon
+  useDisclosure
 } from "@chakra-ui/core";
-import NavBar from "./NavBar";
 import DorgMark from "../../images/Asset 17.svg";
 
 const Hero: React.FC = ({}) => {
   return (
     <Flex
+      width="100%"
+      align="center"
       direction="column"
-      align="space-around"
-      minH={["100vh"]}
-      color="white"
-      position="relative"
-      w="100%"
-      background={"radial-gradient( #004346, #004346, #172A3A);"}
-      pb={["7rem"]}
+      minHeight={"500px"}
+      px={["7vw"]}
+      flexGrow={1}
+      justifyContent="center"
     >
-      <NavBar />
+      <Image
+        src={DorgMark}
+        mb={["-.5rem"]}
+        height={["4rem", "3.5rem", "4rem"]}
+      />
 
-      <Flex
-        width="100%"
-        align="center"
-        direction="column"
-        px={["7vw"]}
-        flexGrow={1}
-        justifyContent="center"
+      <Heading
+        as="h1"
+        fontSize={["1.5rem", "1.5rem", "2.6rem"]}
+        mb="0"
+        py={["4vh"]}
+        textAlign="center"
+        maxW={["20em"]}
+        fontWeight={[400, 300]}
       >
-        <Image
-          src={DorgMark}
-          mb={["-.5rem"]}
-          height={["4rem", "3.5rem", "4rem"]}
-        />
-
-        <Heading
-          as="h1"
-          fontSize={["1.5rem", "1.5rem", "2.6rem"]}
-          mb="0"
-          py={["4vh", "5vh"]}
-          textAlign="center"
-          maxW={["20em"]}
-          fontWeight={[400, 300]}
-        >
-          dOrg designs and develops web3 projects of all sizes
-        </Heading>
-        <SchedulingModal />
-      </Flex>
+        dOrg designs and develops web3 projects of all sizes
+      </Heading>
+      <SchedulingModal />
     </Flex>
   );
 };

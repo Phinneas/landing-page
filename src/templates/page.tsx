@@ -3,37 +3,32 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
-import { Grid } from "@chakra-ui/core";
+import { Grid, Heading, Box, Flex } from "@chakra-ui/core";
 import { MDXProvider } from "@mdx-js/react";
 
 // eslint-disable-next-line
-interface Props extends WithStyles<typeof styles> {
+interface Props {
   data: any;
 }
 
-const PageTemplate: React.FC<Props> = ({ data: { mdx }, classes }) => {
+const PageTemplate: React.FC<Props> = ({ data: { mdx } }) => {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
-      <Grid
-        container
-        direction={"column"}
-        justify={"flex-start"}
-        className={classes.container}
-      >
+      <Flex direction={"column"} justify={"flex-start"} className={"container"}>
         <MDXProvider
           components={{
-            h4: Header,
-            h6: Subheader,
-            p: Body,
-            ul: Body,
-            li: props => <li {...props} className={classes.listItem} />,
-            a: props => <a {...props} className={classes.link} />
+            h4: Heading,
+            h6: Heading,
+            p: Box,
+            ul: Box,
+            li: props => <li {...props} className={"listItem"} />,
+            a: props => <a {...props} className={"listItem"} />
           }}
         >
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-      </Grid>
+      </Flex>
     </Layout>
   );
 };

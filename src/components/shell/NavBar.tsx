@@ -1,21 +1,8 @@
 import * as React from "react";
-import { Link, navigate } from "gatsby";
 
 import {
-  Heading,
-  Stack,
   Flex,
-  Drawer,
-  DrawerContent,
-  DrawerCloseButton,
-  DrawerBody,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerFooter,
   Button,
-  Input,
-  useDisclosure,
-  Image,
   Menu,
   MenuButton,
   MenuList,
@@ -23,10 +10,9 @@ import {
   Icon
 } from "@chakra-ui/core";
 
-import dOrgIcon from "../../images/icons/dOrg.svg";
-
-import LineIcon from "react-lineicons";
+// import LineIcon from "react-lineicons";
 import { windowShim } from "../../util/windowShim";
+import { navigate } from "gatsby";
 
 const NavBar: React.FC = ({ children }) => (
   <Flex
@@ -59,16 +45,16 @@ const NavBar: React.FC = ({ children }) => (
         </MenuButton>
 
         <MenuList backgroundColor="transparent">
-          {/* <MenuItem
+          <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
             _hover={{ background: "transparent", color: "#1aaf71" }}
-            onClick={() => windowShim.open("")}
+            onClick={() => navigate("/dao-creator")}
           >
             Cotary Create
             <Icon name="chevron-right" />
-          </MenuItem> */}
+          </MenuItem>
           <MenuItem
             backgroundColor="transparent"
             _focus={{ background: "transparent" }}
@@ -102,7 +88,7 @@ const NavBar: React.FC = ({ children }) => (
         onClick={() => windowShim.open("https://github.com/dOrgTech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        <LineIcon name="github" size="sm" />
+        {/* <LineIcon name="github" size="sm" /> */}
       </Button>
       <Button
         width={0}
@@ -111,7 +97,7 @@ const NavBar: React.FC = ({ children }) => (
         onClick={() => windowShim.open("https://twitter.com/dorg_tech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        <LineIcon name="twitter" size="sm" />
+        {/* <LineIcon name="twitter" size="sm" /> */}
       </Button>
       <Button
         width={0}
@@ -120,7 +106,7 @@ const NavBar: React.FC = ({ children }) => (
         onClick={() => windowShim.open("mailto:contact@dorg.tech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        <LineIcon name="envelope" size="sm" />
+        {/* <LineIcon name="envelope" size="sm" /> */}
       </Button>
     </Flex>
   </Flex>
