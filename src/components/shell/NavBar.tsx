@@ -52,7 +52,7 @@ const NavBar: React.FC = ({ children }) => (
             _hover={{ background: "transparent", color: "#1aaf71" }}
             onClick={() => navigate("/dao-creator")}
           >
-            Cotary Create
+            DAO Creator
             <Icon name="chevron-right" />
           </MenuItem>
           <MenuItem
