@@ -1,5 +1,8 @@
 import * as React from "react";
 // import LineIcon from "react-lineicons";
+import GithubIcon from "react-icons/lib/fa/github-alt";
+import ExternalLink from "react-icons/lib/fa/external-link";
+import BookIcon from "react-icons/lib/fa/book";
 
 import {
   Image,
@@ -96,7 +99,7 @@ const CaseCard: React.FC<Props> = ({
           mx="0"
           textAlign="center"
         >
-          {/* <LineIcon name="github" size="sm" /> */}
+          <GithubIcon />
         </Button>
       ) : (
         ""
@@ -108,7 +111,7 @@ const CaseCard: React.FC<Props> = ({
           mx="0"
           textAlign="center"
         >
-          {/* <LineIcon name="link" size="sm" /> */}
+          <ExternalLink />
         </Button>
       ) : (
         ""
@@ -120,7 +123,7 @@ const CaseCard: React.FC<Props> = ({
           mx="0"
           textAlign="center"
         >
-          {/* <LineIcon name="library" size="sm" /> */}
+          <BookIcon />
         </Button>
       ) : (
         ""

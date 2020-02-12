@@ -1,4 +1,7 @@
 import * as React from "react";
+import TwitterIcon from "react-icons/lib/io/social-twitter";
+import GithubIcon from "react-icons/lib/fa/github-alt";
+import EmailIcon from "react-icons/lib/io/android-mail";
 
 import {
   Flex,
@@ -50,7 +53,9 @@ const NavBar: React.FC = ({ children }) => (
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
             _hover={{ background: "transparent", color: "#1aaf71" }}
-            onClick={() => navigate("/dao-creator")}
+            onClick={() =>
+              windowShim.open("https://alchemy.daostack.io/daos/create")
+            }
           >
             Cotary Create
             <Icon name="chevron-right" />
@@ -82,31 +87,25 @@ const NavBar: React.FC = ({ children }) => (
     </Flex>
     <Flex>
       <Button
-        width={0}
         bg="transparent"
-        ml=".25rem"
         onClick={() => windowShim.open("https://github.com/dOrgTech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        {/* <LineIcon name="github" size="sm" /> */}
+        <GithubIcon size={20} />
       </Button>
       <Button
-        width={0}
         bg="transparent"
-        ml=".25rem"
         onClick={() => windowShim.open("https://twitter.com/dorg_tech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        {/* <LineIcon name="twitter" size="sm" /> */}
+        <TwitterIcon size={20} />
       </Button>
       <Button
-        width={0}
         bg="transparent"
-        ml=".25rem"
         onClick={() => windowShim.open("mailto:contact@dorg.tech")}
         _hover={{ background: "transparent", color: "#1aaf71" }}
       >
-        {/* <LineIcon name="envelope" size="sm" /> */}
+        <EmailIcon size={20} />
       </Button>
     </Flex>
   </Flex>
