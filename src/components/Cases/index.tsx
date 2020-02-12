@@ -120,12 +120,13 @@ const CaseList: React.FC = ({}) => {
           <TabList
             justifyContent={["space-evenly", "center"]}
             flexDirection="row"
-            // flexWrap="wrap"
+            flexWrap="wrap"
             // position="absolute"
             alignSelf="flex-start"
             // pl="5vw"
             // px="1rem"
             border={0}
+            mb="-.1rem"
           >
             {data.allMarkdownRemark.edges.map(
               ({ node: { id, frontmatter } }: any) => {
@@ -135,7 +136,7 @@ const CaseList: React.FC = ({}) => {
                     height={["3rem", "4rem"]}
                     border={"0"}
                     px={".5rem"}
-                    borderRadius={".2rem .2rem 0 0 "}
+                    borderRadius={".2rem"}
                     mb={"0"}
                     backgroundColor={frontmatter.bgcolor.substr(1)}
                     onClick={e => windowShim.scrollToBottom()}
