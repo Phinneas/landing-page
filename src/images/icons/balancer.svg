@@ -1,17 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="222px" height="181px" viewBox="0 0 222 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
-    <title>pebbles-pad</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-554.000000, -51.000000)" fill="#FFFFFF" fill-rule="nonzero">
-            <g id="pebbles-pad" transform="translate(554.000000, 51.000000)">
-                <path d="M155.878763,109.976246 C194.82596,115.735917 222,128.762492 222,143.909836 C222,164.394168 172.303607,181 111,181 C49.6963928,181 0,164.394168 0,143.909836 C0,128.762492 27.1740399,115.735917 66.121237,109.976246 C79.4985588,112.696721 94.776664,114.237705 111,114.237705 C126.816331,114.237705 141.734263,112.77307 154.869366,110.180567 L155.878763,109.976246 Z" id="peb-bot"></path>
-                <path d="M139.092748,48.9909057 C174.367502,52.918659 199.8,64.0406743 199.8,77.1475407 C199.8,93.5350062 160.042886,106.819672 111,106.819672 C61.9571142,106.819672 22.2,93.5350062 22.2,77.1475407 C22.2,64.0406743 47.6324978,52.918659 82.9072522,48.9909057 C91.5473488,50.4038321 101.039152,51.184426 111,51.184426 C120.612406,51.184426 129.788009,50.457489 138.182799,49.1373316 L139.092748,48.9909057 Z" id="peb-med"></path>
-                <g id="peb-top" transform="translate(44.400000, 0.741803)">
-                    <ellipse id="peb-sm" cx="66.6" cy="22.2540984" rx="66.6" ry="22.2540984"></ellipse>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 222 181" style="enable-background:new 0 0 222 181;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<title>pebbles-pad</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="Artboard" transform="translate(-554.000000, -51.000000)">
+		<g id="pebbles-pad" transform="translate(554.000000, 51.000000)">
+			<path id="peb-bot" class="st0" d="M137.7,102.2c23.2,3.4,39.3,11.2,39.3,20.2c0,12.2-29.5,22.1-66,22.1s-66-9.9-66-22.1
+				c0-9,16.2-16.8,39.3-20.2c8,1.6,17,2.5,26.7,2.5c9.4,0,18.3-0.9,26.1-2.4L137.7,102.2z"/>
+			<path id="peb-med" class="st0" d="M127.7,66c21,2.3,36.1,8.9,36.1,16.7c0,9.7-23.6,17.6-52.8,17.6s-52.8-7.9-52.8-17.6
+				c0-7.8,15.1-14.4,36.1-16.7c5.1,0.8,10.8,1.3,16.7,1.3c5.7,0,11.2-0.4,16.2-1.2L127.7,66z"/>
+			<g id="peb-top" transform="translate(44.400000, 0.741803)">
+				<ellipse id="peb-sm" class="st0" cx="66.6" cy="49.8" rx="39.6" ry="13.2"/>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>
