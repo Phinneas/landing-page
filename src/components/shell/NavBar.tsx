@@ -34,14 +34,14 @@ const NavBar: React.FC = ({ children }) => (
       </Button> */}
       <Menu>
         <MenuButton
-          className="toolsButton"
+          className="moreButton"
           _hover={{ background: "transparent", color: "#1aaf71" }}
           _active={{ background: "transparent" }}
           as={Button}
           variant="invisible"
           rightIcon="chevron-down"
         >
-          Tools
+          More
         </MenuButton>
 
         <MenuList backgroundColor="transparent">
