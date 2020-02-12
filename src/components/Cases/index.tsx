@@ -95,7 +95,7 @@ const CaseList: React.FC = ({}) => {
       color="white"
       position="relative"
       w="100%"
-      mt={["-7rem", "-8rem"]}
+      // mt={["0", "0"]}
       id="cases"
     >
       <Heading
