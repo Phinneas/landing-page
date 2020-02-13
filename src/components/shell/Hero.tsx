@@ -44,7 +44,7 @@ const Hero: React.FC = ({}) => {
         maxW={["20em"]}
         fontWeight={[400, 300]}
       >
-        dOrg designs and develops web3 projects of all sizes
+        dOrg is a full stack Ethereum development agency
       </Heading>
       <SchedulingModal />
     </Flex>
