@@ -29,7 +29,6 @@ interface Props {
   description: string;
   excerpt: string;
   github?: string;
-  test?: string;
   spec?: string;
   article?: string;
 }
@@ -41,7 +40,6 @@ const CaseCard: React.FC<Props> = ({
   description,
   excerpt,
   github,
-  test,
   spec,
   article
 }) => (
