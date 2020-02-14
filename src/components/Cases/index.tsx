@@ -46,7 +46,6 @@ const CaseList: React.FC = ({}) => {
               title
               github
               description
-              test
               excerpt
               spec
               article
