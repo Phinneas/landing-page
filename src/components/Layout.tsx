@@ -1,52 +1,37 @@
 import React from "react";
+// import theme from "../style/theme";
 import {
-  MuiThemeProvider,
-  WithStyles,
-  Theme,
-  createStyles,
-  withStyles
-} from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../style/theme";
-import Background from "./shell/Background";
-import TopBar from "./shell/TopBar";
-import { Typography } from "@material-ui/core";
+  CSSReset,
+  Flex,
+  Box,
+  DefaultTheme,
+  ThemeProvider,
+  theme,
+  ColorModeProvider
+} from "@chakra-ui/core";
+import { stripe } from "../styles";
+import NavBar from "./shell/NavBar";
 
-// eslint-disable-next-line
-interface Props extends WithStyles<typeof styles> {}
-
-const Layout: React.FC<Props> = ({ children, classes }) => {
+const Layout: React.FC = ({ children }) => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Background />
-      <TopBar />
-      <main className={classes.root}>
-        {children}
-        <Typography className={classes.copyright}>
-          © 2019 dOrg, BBLLC. All Rights Reserved.
-        </Typography>
-      </main>
-    </MuiThemeProvider>
+    <ThemeProvider theme={{ ...theme, ...stripe }}>
+      <CSSReset />
+      <Box as={"main"}>
+        <Flex
+          direction="column"
+          align="space-around"
+          minH={["100vh"]}
+          color="white"
+          position="relative"
+          w="100%"
+          background={"radial-gradient( #004346, #004346, #172A3A);"}
+        >
+          <NavBar />
+          {children}
+        </Flex>
+      </Box>
+    </ThemeProvider>
   );
 };
 
-// STYLE
-const styles = (theme: Theme) =>
-  createStyles({
-    root: {
-      flex: 1,
-      height: "100vh",
-      // bring forward (infront of background)
-      position: "relative",
-      // disable pointer events, don't block background
-      pointerEvents: "none"
-    },
-    copyright: {
-      color: "white",
-      textAlign: "center",
-      padding: "0.5rem"
-    }
-  });
-
-export default withStyles(styles)(Layout);
+export default Layout;

@@ -62,25 +62,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
-
-exports.onCreateWebpackConfig = ({
-  stage,
-  rules,
-  loaders,
-  plugins,
-  actions
-}) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    node: {
+      fs: "empty",
+      electron: "empty"
+    },
+    externals: {
+      electron: "electron"
+    },
     resolve: {
       alias: {
-        // replace native `scrypt` module with pure js `js-scrypt`
-        scrypt: "js-scrypt"
+        "scrypt.js": path.resolve(__dirname, "./node_modules/scrypt.js/js.js"),
+        electron: "electron"
       }
-    },
-    plugins: [
-      // ignore these plugins completely
-      new IgnorePlugin(/^(?:electron|ws)$/)
-    ],
-    mode: "production"
+    }
   });
 };

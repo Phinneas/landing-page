@@ -1,104 +1,135 @@
 import * as React from "react";
+// import LineIcon from "react-lineicons";
+import GithubIcon from "react-icons/lib/fa/github-alt";
+import ExternalLink from "react-icons/lib/fa/external-link";
+import BookIcon from "react-icons/lib/fa/book";
+
 import {
-  withStyles,
-  Typography,
-  Theme,
-  WithStyles,
-  createStyles,
-  Card,
-  CardMedia,
-  CardContent,
-  Grid,
-  IconButton
-} from "@material-ui/core";
-import TestIcon from "@material-ui/icons/ExitToApp";
-import GitHubIcon from "../common/icons/GitHub";
+  Image,
+  Heading,
+  Flex,
+  Text,
+  Box,
+  Link,
+  Button,
+  Stack
+} from "@chakra-ui/core";
+import { windowShim } from "../../util/windowShim";
 
 // eslint-disable-next-line
-interface Props extends WithStyles<typeof styles> {
+interface Props {
+  word_mark: {
+    publicURL: string;
+  };
   icon: {
     publicURL: string;
   };
   title: string;
+  bgcolor: string;
   description: string;
-  github: string;
+  excerpt: string;
+  github?: string;
   test?: string;
+  spec?: string;
+  article?: string;
 }
 
 const CaseCard: React.FC<Props> = ({
-  classes,
-  icon,
+  word_mark,
   title,
+  bgcolor,
   description,
+  excerpt,
   github,
-  test
+  test,
+  spec,
+  article
 }) => (
-  <Card className={classes.background}>
-    <CardMedia image={icon.publicURL} className={classes.icon} />
-    <CardContent>
-      <Grid
-        container
-        direction={"column"}
-        justify={"flex-start"}
-        alignItems={"center"}
-      >
-        <Typography variant={"h4"} className={classes.title}>
-          {title}
-        </Typography>
-        <Typography align={"center"} className={classes.description}>
-          {description}
-        </Typography>
-        <Grid container direction={"row"} justify={"center"}>
-          <IconButton
-            className={classes.iconButton}
-            onClick={() => window.open(github)}
-          >
-            <GitHubIcon />
-          </IconButton>
-          {test ? (
-            <IconButton
-              className={classes.iconButton}
-              onClick={() => window.open(test)}
-            >
-              <TestIcon />
-            </IconButton>
-          ) : (
-            <></>
-          )}
-        </Grid>
-      </Grid>
-    </CardContent>
-  </Card>
+  <Stack
+    direction="row"
+    spacing={["0", "0", "3rem"]}
+    px="3rem"
+    pt={["1rem", "1rem", "2rem"]}
+    flexWrap="wrap"
+    align="center"
+    justify={["center", "space-between", "center"]}
+    pb="2rem"
+    background={bgcolor.substr(1)}
+  >
+    <Flex
+      pb={["2rem", "2rem", 0]}
+      pt={["1.5rem", "1rem", 0]}
+      w="100%"
+      direction="column"
+      align={["center", "start", "center"]}
+      justify="center"
+      maxW={["70vw", "70vw", "10rem"]}
+    >
+      <Box
+        width={["10rem", "12rem", "10rem"]}
+        height={["10rem", "8rem", "10rem"]}
+        backgroundImage={"url(" + word_mark.publicURL + ")"}
+        backgroundSize="contain"
+        backgroundRepeat="no-repeat"
+        backgroundPosition={["center", "left center", "left center"]}
+      />
+    </Flex>
+
+    <Flex
+      justifyContent="center"
+      direction="column"
+      textAlign={["center", "left", "left"]}
+      maxWidth={["100%", "70vw", "50vw", "38rem"]}
+      pb={["1rem", 0]}
+    >
+      <Text fontFamily="inherit">{excerpt}</Text>
+    </Flex>
+    <Flex
+      maxW={["100%", "1rem"]}
+      ml={[0, "1rem"]}
+      mt={["1rem", "0"]}
+      align="center"
+      justifyContent="center"
+      direction={["row", "column"]}
+    >
+      {github != undefined ? (
+        <Button
+          onClick={() => windowShim.open(github)}
+          variant="unstyled"
+          mx="0"
+          textAlign="center"
+        >
+          <GithubIcon />
+        </Button>
+      ) : (
+        ""
+      )}
+      {article != undefined ? (
+        <Button
+          onClick={() => windowShim.open(article)}
+          variant="unstyled"
+          mx="0"
+          textAlign="center"
+        >
+          <ExternalLink />
+        </Button>
+      ) : (
+        ""
+      )}
+      {spec != undefined ? (
+        <Button
+          onClick={() => windowShim.open(spec)}
+          variant="unstyled"
+          mx="0"
+          textAlign="center"
+        >
+          <BookIcon />
+        </Button>
+      ) : (
+        ""
+      )}
+    </Flex>
+  </Stack>
 );
 
-// STYLE
-const styles = (theme: Theme) =>
-  createStyles({
-    background: {
-      background: "rgba(2, 46, 46, 0.2)",
-      pointerEvents: "all",
-      padding: "10px",
-      minHeight: "515px"
-    },
-    icon: {
-      minHeight: "300px",
-      maxWidth: "300px",
-      margin: "auto"
-    },
-    title: {
-      color: "#4bd2c6"
-    },
-    description: {
-      color: "white"
-    },
-    iconButton: {
-      margin: "10px",
-      color: "#4bd2c6",
-      backgroundColor: "rgba(2, 46, 46, 0.5)",
-      "&:hover": {
-        backgroundColor: "black"
-      }
-    }
-  });
-
-export default withStyles(styles)(CaseCard);
+export default CaseCard;
