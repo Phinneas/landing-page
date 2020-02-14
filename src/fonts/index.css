@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "GTWalsheimProRegular";
+  src: url("GTWalsheimProRegular.woff2") format("woff2"),
+    url("GTWalsheimProRegular.woff") format("woff"),
+    url("GTWalsheimProRegular.ttf") format("truetype"),
+    url("GTWalsheimProRegular.svg#GTWalsheimProRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url("GTPressuraMono-Light.woff2") format("woff2"),
+    url("GTPressuraMono-Light.woff") format("woff"),
+    url("GTPressuraMono-Light.ttf") format("truetype"),
+    url("GTPressuraMono-Light.svg#GTPressuraMono-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url("GTPressuraMono.woff2") format("woff2"),
+    url("GTPressuraMono.woff") format("woff"),
+    url("GTPressuraMono.ttf") format("truetype"),
+    url("GTPressuraMono.svg#GTPressuraMono") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Pressura Mono";
+  src: url("GTPressuraMono-Bold.woff2") format("woff2"),
+    url("GTPressuraMono-Bold.woff") format("woff"),
+    url("GTPressuraMono-Bold.ttf") format("truetype"),
+    url("GTPressuraMono-Bold.svg#GTPressuraMono-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GTWalsheimProMedium";
+  src: url("GTWalsheimProMedium.woff2") format("woff2"),
+    url("GTWalsheimProMedium.woff") format("woff"),
+    url("GTWalsheimProMedium.ttf") format("truetype"),
+    url("GTWalsheimProMedium.svg#GTWalsheimProMedium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("GTWalsheimThin-Oblique.woff2") format("woff2"),
+    url("GTWalsheimThin-Oblique.woff") format("woff"),
+    url("GTWalsheimThin-Oblique.ttf") format("truetype"),
+    url("GTWalsheimThin-Oblique.svg#GTWalsheimThin-Oblique") format("svg");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "GTWalsheimProLight";
+  src: url("GTWalsheimProLight.woff2") format("woff2"),
+    url("GTWalsheimProLight.woff") format("woff"),
+    url("GTWalsheimProLight.ttf") format("truetype"),
+    url("GTWalsheimProLight.svg#GTWalsheimProLight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("GTWalsheimThin.woff2") format("woff2"),
+    url("GTWalsheimThin.woff") format("woff"),
+    url("GTWalsheimThin.ttf") format("truetype"),
+    url("GTWalsheimThin.svg#GTWalsheimThin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}

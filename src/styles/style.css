@@ -1,0 +1,56 @@
+body {
+  font-family: "GT Pressura Mono";
+  font-weight: 300 !important;
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "GT Pressura Mono" !important;
+  /* font-weight: 300 !important ; */
+}
+
+* {
+  /* transition: all 0.4s; */
+}
+
+#background-video {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+#cases *[aria-selected="false"] {
+  /* opacity: 0.5; */
+  /* border-bottom: 0.2rem solid transparent; */
+  background: transparent;
+}
+#cases *[aria-selected="true"] {
+  opacity: 1;
+}
+/* #cases *[aria-selected="true"] img {
+  width: 10rem;
+
+} */
+
+/* .toolsButton, .toolsButton:hover {
+  background-color: transparent;
+  border: 1px solid white;
+} */
+button[role="menuitem"] svg {
+  transition: all 0.2s;
+}
+button[role="menuitem"]:hover svg {
+  margin-left: 0.2rem;
+}
+button[role="menuitem"]:active svg {
+  margin-left: 0.75rem;
+}
