@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="277px" height="252px" viewBox="0 0 277 252" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-529.000000, -51.000000)" fill="#FFFFFF">
+            <g id="Group" transform="translate(524.000000, 51.000000)">
+                <g id="pebbles-pad" transform="translate(30.000000, 0.000000)" fill-rule="nonzero">
+                    <path d="M155.878763,109.976246 C194.82596,115.735917 222,128.762492 222,143.909836 C222,164.394168 172.303607,181 111,181 C49.6963928,181 0,164.394168 0,143.909836 C0,128.762492 27.1740399,115.735917 66.121237,109.976246 C79.4985588,112.696721 94.776664,114.237705 111,114.237705 C126.816331,114.237705 141.734263,112.77307 154.869366,110.180567 L155.878763,109.976246 Z" id="peb-bot"></path>
+                    <path d="M139.092748,48.9909057 C174.367502,52.918659 199.8,64.0406743 199.8,77.1475407 C199.8,93.5350062 160.042886,106.819672 111,106.819672 C61.9571142,106.819672 22.2,93.5350062 22.2,77.1475407 C22.2,64.0406743 47.6324978,52.918659 82.9072522,48.9909057 C91.5473488,50.4038321 101.039152,51.184426 111,51.184426 C120.612406,51.184426 129.788009,50.457489 138.182799,49.1373316 L139.092748,48.9909057 Z" id="peb-med"></path>
+                    <g id="peb-top" transform="translate(44.400000, 0.741803)">
+                        <ellipse id="peb-sm" cx="66.6" cy="22.2540984" rx="66.6" ry="22.2540984"></ellipse>
+                    </g>
+                </g>
+                <text id="Balancer" font-family="DINAlternate-Bold, DIN Alternate" font-size="75" font-weight="bold">
+                    <tspan x="0.332763672" y="251">Balancer</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
