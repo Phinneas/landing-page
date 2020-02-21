@@ -75,6 +75,16 @@ const NavBar: React.FC = ({ children }) => (
             _focus={{ background: "transparent" }}
             _active={{ background: "transparent" }}
             _hover={{ background: "transparent", color: "#1aaf71" }}
+            onClick={() => windowShim.open("https://dorg.tech/invoice")}
+          >
+            Setup Payment
+            <Icon name="chevron-right" />
+          </MenuItem>
+          <MenuItem
+            backgroundColor="transparent"
+            _focus={{ background: "transparent" }}
+            _active={{ background: "transparent" }}
+            _hover={{ background: "transparent", color: "#1aaf71" }}
             onClick={() =>
               windowShim.open("https://dorgtech.typeform.com/to/a1rMob")
             }
